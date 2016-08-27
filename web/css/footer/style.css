@@ -1,7 +1,7 @@
 .footer-cont {
-	background: #343434;
+	background: #212C31;
 	display: flex;
-	min-height: 10vh;
+	min-height: 8vh;
 }
 
 .footer-cont ul {
