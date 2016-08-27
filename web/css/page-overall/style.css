@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+	background: #FFF;
+	font-family: HelveticaNeue-Light;
+}
+
+li:focus,
+p:focus,
+div:focus,
+img:focus,
+span:focus{
+  	outline:none !important;
+  	border: 0;
+}

@@ -1,0 +1,41 @@
+{
+  "name": "indranil-sen",
+  "version": "1.0.0",
+  "description": "Indranil Sen's personal website.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Indranil",
+    "Sen",
+    "Engineer",
+    "Full-Stack",
+    "Developer"
+  ],
+  "author": "Indranil Sen",
+  "license": "MIT",
+  "devDependencies": {
+    "add-stream": "^1.0.0",
+    "compression": "^1.6.2",
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
+    "merge-stream": "^1.0.0",
+    "yargs": "^5.0.0"
+  }
+}
