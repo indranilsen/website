@@ -14,6 +14,18 @@ angular.module('app')
             			url: '/about',
             			template: "<indranil-sen-main-about>"
         		})
+            .state('projects', {
+            			url: '/projects',
+            			template: "<indranil-sen-main-projects>"
+        		})
+            .state('resume', {
+            			url: '/resume',
+            			template: "<indranil-sen-main-resume>"
+        		})
+            .state('skills', {
+            			url: '/skils',
+            			template: "<indranil-sen-main-skills>"
+        		})
         		.state('contact', {
             			url: '/contact',
             			template: "<indranil-sen-main-contact>"
