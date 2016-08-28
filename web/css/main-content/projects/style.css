@@ -1,11 +1,10 @@
 .projects-cont {
   min-height: 85vh;
-  border: 1px solid red;
   padding: 3em;
+  background-color: #153848;
 }
 
 .all-projects {
-  border: 1px solid blue;
   margin: 0;
   padding: 0;
   display: flex;
@@ -15,12 +14,10 @@
 }
 
 .single-project-cont {
-  border: 1px solid green;
   margin-bottom: 2em;
 }
 
 .project {
-  border: 1px solid orange;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -29,7 +26,6 @@
 }
 
 .project-pic {
-  border: 1px solid red;
   height: 300px;
 }
 
@@ -39,14 +35,13 @@
 }
 
 .project-desc {
-  border: 1px solid black;
   height: 100px;
 }
 
 .project-desc ul {
-  border: 1px solid blue;
   margin: 0;
   padding: 0;
+  background-color: #FFF;
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -56,12 +51,14 @@
 }
 
 .project-desc-name {
-  border: 1px solid red;
-  padding: 1em;
+  padding: 2em;
   height: 60%;
 }
 
 .project-desc-tags {
-  border: 1px solid red;
   height: 40%;
+  font-size: 0.6em;
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
 }
