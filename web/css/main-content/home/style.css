@@ -1,0 +1,95 @@
+.home-cont {
+  min-height: 80vh;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #787878;
+}
+
+.greet-title {
+  margin: 0;
+  text-align: center;
+  font-size: 3em;
+  color: #00BAFF;
+  padding: 0.3em;
+  font-weight: 100;
+  letter-spacing: 0.1em;
+}
+
+.greet-line {
+  border: 0;
+  height: 0;
+  width: 60%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.greet-name {
+  margin: 0;
+  padding: 0.55em;
+  text-align: center;
+  font-size: 2em;
+  word-spacing: 0.2em;
+  letter-spacing: 0.1em;
+  font-weight: 100;
+}
+
+.greet-message {
+  margin: 0;
+  padding-top: .5em;
+  text-align: justify;
+  letter-spacing: 0.1em;
+  line-height: 1.4em;
+  width: 40%;
+}
+
+.greet-btn-cont {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  list-style: none;
+  padding: 1em 0 1em 0;
+}
+
+.greet-btn-cont li {
+  margin: 0;
+  border: 1px solid #00BAFF;
+  min-width: 20%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.greet-btn-cont li a {
+  display: block;
+  padding: 0.4em;
+  text-decoration: none;
+  transition: all 200ms ease-out;
+  color: #00BAFF;
+}
+
+.greet-btn-cont li a:hover {
+  background-color: #00BAFF;
+  color: #FFF;
+}
+
+.greet-social-btn-cont {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 30%;
+  padding: 1em 0 1em 0;
+}
+
+.greet-social-btn-cont li a {
+  text-decoration: none;
+  transition: all 50ms ease-out;
+  color: #787878;
+}
+
+.greet-social-btn-cont li a:hover {
+  color: #00BAFF;
+}

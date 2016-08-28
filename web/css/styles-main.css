@@ -6,13 +6,15 @@
 
 /* <header> styles */
 @import url('header/style.css');
-@import url('main-content/about/style.css');
-@import url('main-content/contact/style.css');
-@import url('main-content/home/style.css');
 
 /* <main> and its children styles */
 @import url('main-content/style.css');
+@import url('main-content/about/style.css');
+@import url('main-content/projects/style.css');
+@import url('main-content/resume/style.css');
+@import url('main-content/skills/style.css');
+@import url('main-content/contact/style.css');
+@import url('main-content/home/style.css');
 
 /* <footer> styles */
 @import url('footer/style.css');
-
