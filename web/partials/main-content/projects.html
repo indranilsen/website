@@ -1,15 +1,17 @@
 <section ng-controller="projectsController" class="projects-cont">
 	<ul class="all-projects">
-		<li class="single-project-cont">
+
+		<li ng-repeat="proj in personalProjects" class="single-project-cont">
 			<ul class="project">
-				<li class="project-pic"><img src="" alt="" /></li>
+				<li class="project-pic"><img src="/img/projects/{{proj.imageSrc}}" alt="{{proj.imageAlt}}" /></li>
 				<li class="project-desc">
 					<ul>
-						<li class="project-desc-name">Student Finance Tracker</li>
-						<li class="project-desc-tags">Java, API-POI, GUI</li>
+						<li class="project-desc-name">{{proj.name}}</li>
+						<li class="project-desc-tags">{{proj.tags}}</li>
 					</ul>
 				</li>
 			</ul>
 		</li>
+
 	</ul>
 </section>
