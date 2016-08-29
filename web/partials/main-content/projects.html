@@ -2,13 +2,13 @@
 
 	<md-content class="md-no-momentum proj-search-bar">
 		<md-input-container md-no-float class="md-block">
-      <input ng-model="user.phone" type="text" placeholder="Search">
+      <input  ng-model="query" type="text" placeholder="Search">
     </md-input-container>
   </md-content>
 
 	<ul class="all-projects">
 
-		<li ng-repeat="proj in personalProjects | filter: {name,tags:query}" class="single-project-cont">
+		<li ng-repeat="proj in personalProjects | filter: query" class="single-project-cont">
 			<ul class="project">
 				<li class="project-pic"><img src="/img/projects/{{proj.image}}" alt="{{proj.info}}" /></li>
 				<li class="project-desc">

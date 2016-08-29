@@ -6,6 +6,7 @@
 .proj-search-bar {
   display: flex;
   justify-content: center;
+  background-color: transparent;
 }
 
 .proj-search-bar md-input-container {
