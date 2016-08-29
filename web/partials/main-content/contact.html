@@ -1,3 +1,48 @@
-<section ng-controller="contactController">
-	[CONTACT PARTIAL]
+<section ng-controller="contactController" class="contact-cont">
+	<h3 class="contact-title">Let's Talk</h3>
+	<hr class="contact-line">
+	<p class="contact-message">If you have a cool idea, internship opportunity or just want to say hello, feel free to give me a ping!</p>
+	<ul class="info-cont">
+
+		<li class="info-cont-form">
+			  <md-content layout-padding>
+			    <form name="contactForm">
+			      <div layout="row">
+			        <md-input-container flex="50">
+			          <label>Name</label>
+			          <input required type="text" md-maxlength="30"name="name" ng-model="user.name">
+			          <div ng-messages="user.name.$error">
+			            <div ng-message="required">Name is required.</div>
+									<div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+			          </div>
+			        </md-input-container>
+			        <md-input-container flex="50">
+			          <label>Email</label>
+				        <input required type="email" name="email" ng-model="user.email"
+				               minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+				        <div ng-messages="user.email.$error" role="alert">
+				          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+				            Your email must be a valid address between 10 and 100 characters long.
+				          </div>
+				        </div>
+			        </md-input-container>
+			      </div>
+			      <md-input-container class="md-block">
+							<md-input-container class="md-block">
+			          <label>Message</label>
+			          <textarea ng-model="user.message" md-maxlength="300" rows="5" md-select-on-focus></textarea>
+			        </md-input-container>
+			      </md-input-container>
+			      <div>
+			        <md-button type="submit" class="info-cont-form-button">Submit</md-button>
+			      </div>
+			    </form>
+			  </md-content>
+		</li>
+
+		<li class="info-cont-details">
+
+		</li>
+
+	</ul>
 </section>
