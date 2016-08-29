@@ -25,9 +25,15 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.contact-line-vert {
+  border: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .contact-message {
   margin: 0;
-  padding: 0.5em 0 1em 0;
+  padding: 1em 0 3em 0;
   text-align: center;
   letter-spacing: 0.1em;
   line-height: 1.4em;
@@ -35,7 +41,6 @@
 }
 
 .info-cont {
-  border: 1px solid red;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -46,7 +51,6 @@
 }
 
 .info-cont-form {
-  border: 1px solid blue;
   flex: 3 0 auto;
 }
 
@@ -65,12 +69,10 @@
 }
 
 .info-cont-details {
-  border: 1px solid green;
   flex: 2 0 auto;
 }
 
 .info-cont-details>ul {
-  border: 1px solid green;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -80,18 +82,11 @@
 }
 
 .details-top {
-  border: 1px solid blue;
   flex: 5 0 auto;
   display: flex;
 }
 
-.details-bottom {
-  border: 1px solid orange;
-  flex: 4 0 auto;
-}
-
 .details-items {
-  border: 1px solid red;
   margin: 0;
   padding: 0;
   display: flex;
@@ -120,4 +115,35 @@
 .item-text {
   flex: 2 0 80%;
   align-self: center;
+}
+
+.details-bottom {
+  flex: 4 0 auto;
+  display: flex;
+}
+
+.social-cont {
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  display: flex;
+  list-style: none;
+}
+
+.social-icon {
+  padding: 0.5em;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon a {
+  color: #787878;
+  font-size: 1.4em;
+  transition: all 200ms ease-out;
+}
+
+.social-icon a:hover {
+  color: #00BAFF;
 }
