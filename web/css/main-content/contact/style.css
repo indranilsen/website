@@ -71,7 +71,10 @@
 
 .info-cont-details>ul {
   border: 1px solid green;
+  margin: 0;
+  padding: 0;
   height: 100%;
+  list-style: none;
 }
 
 .details-top {
@@ -82,4 +85,37 @@
 .details-bottom {
   border: 1px solid orange;
   height: 40%;
+}
+
+.details-items {
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  list-style: none;
+  height: 100%;
+}
+
+.item-cont {
+}
+
+.item-cont>ul {
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  list-style: none;
+}
+
+.item-icon {
+  text-align: center;
+  font-size: 2em;
+  flex: 1 0 auto;
+}
+
+.item-text {
+  flex: 3 0 auto;
+  align-self: center;
 }
