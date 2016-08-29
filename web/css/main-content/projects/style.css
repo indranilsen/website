@@ -3,6 +3,16 @@
   padding: 3em;
 }
 
+.proj-search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.proj-search-bar md-input-container {
+  min-width: 300px;
+  width: 20%;
+}
+
 .all-projects {
   margin: 0;
   padding: 0;
