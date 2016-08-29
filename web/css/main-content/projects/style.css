@@ -1,7 +1,6 @@
 .projects-cont {
   min-height: 85vh;
   padding: 3em;
-  background-color: #153848;
 }
 
 .all-projects {
@@ -14,7 +13,8 @@
 }
 
 .single-project-cont {
-  margin-bottom: 2em;
+  margin-bottom: 3em;
+  box-shadow: 0px 0px 20px 6px rgba(33,33,33,0.235);
 }
 
 .project {
@@ -40,7 +40,7 @@
 
 .project-desc ul {
   margin: 0;
-  padding: 0;
+  padding: 0 1em 0 1em;
   background-color: #FFF;
   display: flex;
   flex-direction: column;
@@ -51,14 +51,22 @@
 }
 
 .project-desc-name {
-  padding: 2em;
-  height: 60%;
+  height: 40%;
+  letter-spacing: 0.09em;
+  padding: 0.5em 0 0 0;
+  color: #5F5D5D;
+}
+
+.project-desc-info {
+  height: 30%;
+  font-size: 0.8em;
+  color: #5F5D5D;
 }
 
 .project-desc-tags {
-  height: 40%;
+  height: 30%;
   font-size: 0.6em;
   display: flex;
   align-items: center;
-  padding-left: 2em;
+  color: #787878;
 }

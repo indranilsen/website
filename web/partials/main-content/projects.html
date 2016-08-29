@@ -3,10 +3,11 @@
 
 		<li ng-repeat="proj in personalProjects" class="single-project-cont">
 			<ul class="project">
-				<li class="project-pic"><img src="/img/projects/{{proj.imageSrc}}" alt="{{proj.imageAlt}}" /></li>
+				<li class="project-pic"><img src="/img/projects/{{proj.image}}" alt="{{proj.info}}" /></li>
 				<li class="project-desc">
 					<ul>
 						<li class="project-desc-name">{{proj.name}}</li>
+						<li class="project-desc-info">{{proj.info}}</li>
 						<li class="project-desc-tags">{{proj.tags}}</li>
 					</ul>
 				</li>
