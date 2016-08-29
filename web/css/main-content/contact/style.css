@@ -54,6 +54,10 @@
   flex: 3 0 auto;
 }
 
+.info-cont-form md-content {
+  background-color: transparent;
+}
+
 .info-cont-form-button {
   margin-top: 0;
   margin-bottom: 0;
