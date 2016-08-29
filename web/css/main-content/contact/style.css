@@ -75,16 +75,19 @@
   padding: 0;
   height: 100%;
   list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .details-top {
   border: 1px solid blue;
-  height: 60%;
+  flex: 5 0 auto;
+  display: flex;
 }
 
 .details-bottom {
   border: 1px solid orange;
-  height: 40%;
+  flex: 4 0 auto;
 }
 
 .details-items {
@@ -94,9 +97,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
   list-style: none;
-  height: 100%;
+  flex: 1 1 100%;
 }
 
 .item-cont {
@@ -112,10 +114,10 @@
 .item-icon {
   text-align: center;
   font-size: 2em;
-  flex: 1 0 auto;
+  flex: 1 0 20%;
 }
 
 .item-text {
-  flex: 3 0 auto;
+  flex: 2 0 80%;
   align-self: center;
 }
