@@ -47,12 +47,7 @@
 
 .info-cont-form {
   border: 1px solid blue;
-  flex: 2 0 auto;
-}
-
-.info-cont-details {
-  border: 1px solid green;
-  flex: 1 0 auto;
+  flex: 3 0 auto;
 }
 
 .info-cont-form-button {
@@ -67,4 +62,24 @@
 .info-cont-form-button:not([disabled]):hover {
   background-color: #00BAFF;
   color: #FFF;
+}
+
+.info-cont-details {
+  border: 1px solid green;
+  flex: 2 0 auto;
+}
+
+.info-cont-details>ul {
+  border: 1px solid green;
+  height: 100%;
+}
+
+.details-top {
+  border: 1px solid blue;
+  height: 60%;
+}
+
+.details-bottom {
+  border: 1px solid orange;
+  height: 40%;
 }
