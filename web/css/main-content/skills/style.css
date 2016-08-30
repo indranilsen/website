@@ -1,0 +1,7 @@
+.skills-cont {
+  min-width: 85vh;
+}
+
+.skills-cont md-content {
+  background-color: transparent;
+}
