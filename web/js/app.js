@@ -48,10 +48,29 @@ angular.module('app', ['ui.router', 'ngMaterial', 'ngMessages'])
             'A700': '#005d80'
         };
 
+        var customAccent = {
+           '50': '#004a66',
+           '100': '#005d80',
+           '200': '#007099',
+           '300': '#0082b3',
+           '400': '#0095cc',
+           '500': '#00a7e6',
+           '600': '#1ac1ff',
+           '700': '#33c8ff',
+           '800': '#4dcfff',
+           '900': '#66d6ff',
+           'A100': '#1ac1ff',
+           'A200': '#00BAFF',
+           'A400': '#00a7e6',
+           'A700': '#80ddff'
+       };
+
         $mdThemingProvider.definePalette('customPrimary', customPrimary);
+        $mdThemingProvider.definePalette('customAccent', customAccent);
 
         $mdThemingProvider.theme('default')
-            .primaryPalette('customPrimary');
+            .primaryPalette('customPrimary')
+            .accentPalette('customAccent');
     })
     .run(function() {
         console.log("App started");
