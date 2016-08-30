@@ -32,6 +32,16 @@
   box-shadow: 0px 0px 20px 6px rgba(33,33,33,0.235);
 }
 
+.single-project-cont:hover .project-pic img {
+  transform: scale(1.2);
+  -webkit-filter: blur(2px);
+}
+
+.single-project-cont:hover .project-desc ul {
+  box-sizing: border-box;
+  border-bottom: 4px solid #00BAFF;
+}
+
 .project {
   margin: 0;
   padding: 0;
@@ -42,11 +52,13 @@
 
 .project-pic {
   height: 300px;
+  overflow: hidden;
 }
 
 .project-pic img {
   width: 100%;
   height: 100%;
+  transition: all 300ms;
 }
 
 .project-desc {

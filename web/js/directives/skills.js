@@ -140,6 +140,10 @@ angular.module('app')
 						"level": ""
 					},
 					{
+						"item": "Build Automation",
+						"level": ""
+					},
+					{
 						"item": "Databases",
 						"level": ""
 					},
