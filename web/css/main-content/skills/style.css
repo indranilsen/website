@@ -5,3 +5,15 @@
 .skills-cont md-content {
   background-color: transparent;
 }
+
+.tabbed-view-cont {
+  /*border: 1px solid red;*/
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.tabbed-view {
+  /*border: 1px solid blue;*/
+  width: 80%;
+}
