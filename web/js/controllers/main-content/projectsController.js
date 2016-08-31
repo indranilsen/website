@@ -1,4 +1,7 @@
 angular.module('app')
-.controller('projectsController', function($scope) {
-	console.log("Hello from projectsController");
-});
+    .controller('projectsController', function($scope, $stateParams, $state) {
+        console.log("Hello from projectsController");
+				var name = $stateParams.name;
+        $scope.state = $state.current
+        $scope.params = $stateParams;
+    });

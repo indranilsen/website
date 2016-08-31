@@ -17,6 +17,17 @@ angular.module('app', ['ui.router', 'ngMaterial', 'ngMessages'])
                 url: '/projects',
                 template: "<indranil-sen-main-projects>"
             })
+            .state('projectDetail', {
+                url: '/projects/:name',
+                params: {
+                  name: {
+                    value: 'defaultValue',
+                    squash: true,
+                  }
+                },
+                templateUrl: '/partials/main-content/projectDetail.html',
+                controller: 'projectsController'
+            })
             .state('resume', {
                 url: '/resume',
                 template: "<indranil-sen-main-resume>"
@@ -72,6 +83,8 @@ angular.module('app', ['ui.router', 'ngMaterial', 'ngMessages'])
             .primaryPalette('customPrimary')
             .accentPalette('customAccent');
     })
-    .run(function() {
+    .run(function($rootScope, $state, $stateParams) {
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
         console.log("App started");
     });

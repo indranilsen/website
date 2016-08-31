@@ -9,6 +9,7 @@
 	<ul class="all-projects">
 
 		<li ng-repeat="proj in personalProjects | filter: query" class="single-project-cont">
+				<a ui-sref="projectDetail({name: '{{proj.name}}'})">
 			<ul class="project">
 				<li class="project-pic"><img src="/img/projects/{{proj.image}}" alt="{{proj.info}}" /></li>
 				<li class="project-desc">
@@ -20,6 +21,6 @@
 				</li>
 			</ul>
 		</li>
-
+		</a>
 	</ul>
 </section>
