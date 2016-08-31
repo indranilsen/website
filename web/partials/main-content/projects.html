@@ -1,4 +1,4 @@
-<section ng-controller="projectsController" class="projects-cont">
+<section ng-controller="projectsController" class="projects-cont" ui-view>
 
 	<md-content class="md-no-momentum proj-search-bar">
 		<md-input-container md-no-float class="md-block">
@@ -7,9 +7,8 @@
 	</md-content>
 
 	<ul class="all-projects">
-
 		<li ng-repeat="proj in personalProjects | filter: query" class="single-project-cont">
-			<a ui-sref="projectDetail({name: '{{proj.name}}'})">
+			<a ui-sref="projects.detail({name: '{{proj.name}}'})">
 				<ul class="project">
 					<li class="project-pic"><img ng-src="/img/projects/{{proj.image}}" alt="{{proj.info}}" /></li>
 					<li class="project-desc">

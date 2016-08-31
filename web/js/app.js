@@ -17,8 +17,8 @@ angular.module('app', ['ui.router', 'ngMaterial', 'ngMessages'])
                 url: '/projects',
                 template: "<indranil-sen-main-projects>"
             })
-            .state('projectDetail', {
-                url: '/projects/:name',
+            .state('projects.detail', {
+                url: '/:name',
                 params: {
                   name: {
                     value: 'defaultValue',
