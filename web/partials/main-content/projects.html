@@ -2,25 +2,25 @@
 
 	<md-content class="md-no-momentum proj-search-bar">
 		<md-input-container md-no-float class="md-block">
-      <input ng-model="query" type="text" placeholder="Search">
-    </md-input-container>
-  </md-content>
+			<input ng-model="query" type="text" placeholder="Search">
+		</md-input-container>
+	</md-content>
 
 	<ul class="all-projects">
 
 		<li ng-repeat="proj in personalProjects | filter: query" class="single-project-cont">
-				<a ui-sref="projectDetail({name: '{{proj.name}}'})">
-			<ul class="project">
-				<li class="project-pic"><img ng-src="/img/projects/{{proj.image}}" alt="{{proj.info}}" /></li>
-				<li class="project-desc">
-					<ul>
-						<li class="project-desc-name">{{proj.name}}</li>
-						<li class="project-desc-info">{{proj.info}}</li>
-						<li class="project-desc-tags">{{proj.tags}}</li>
-					</ul>
-				</li>
-			</ul>
+			<a ui-sref="projectDetail({name: '{{proj.name}}'})">
+				<ul class="project">
+					<li class="project-pic"><img ng-src="/img/projects/{{proj.image}}" alt="{{proj.info}}" /></li>
+					<li class="project-desc">
+						<ul>
+							<li class="project-desc-name">{{proj.name}}</li>
+							<li class="project-desc-info">{{proj.info}}</li>
+							<li class="project-desc-tags">{{proj.tags}}</li>
+						</ul>
+					</li>
+				</ul>
+			</a>
 		</li>
-		</a>
 	</ul>
 </section>
