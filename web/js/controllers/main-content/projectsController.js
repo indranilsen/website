@@ -5,5 +5,5 @@ angular.module('app')
         $scope.state = $state.current;
         $scope.params = $stateParams;
 
-				$scope.test = projectsHelper.projects;
+				$scope.project = projectsHelper.projects;
     });

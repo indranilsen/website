@@ -1,1 +1,21 @@
-<h3 class="proj-detail-title">TEST: {{test[params.index].name}}</h3>
+<h3 class="proj-detail-title">{{project[params.index].name}}</h3>
+<hr class="proj-detail-line">
+
+<ul class="proj-detail-content">
+  <li class="proj-detail-content-pane-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></li>
+
+  <li class="proj-detail-content-pane-centre">
+    <ul>
+      <li class="pane-centre-top">
+        <ul>
+          <li class="pane-centre-top-img"><img ng-src="/img/projects/{{project[params.index].image}}" alt="{{proj.info}}" /></li>
+          <li class="pane-centre-top-desc">{{project[params.index].description}}</li>
+        </ul>
+      </li>
+
+      <li class="pane-centre-bottom"><i class="fa fa-github" aria-hidden="true"></i></li>
+    </ul>
+  </li>
+
+  <li class="proj-detail-content-pane-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+</ul>

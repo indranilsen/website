@@ -105,3 +105,96 @@
   align-items: center;
   color: #787878;
 }
+
+/* ================== CSS for Project Detail Section ================== */
+.proj-detail-title {
+  margin: 0;
+  text-align: center;
+  font-size: 3em;
+  color: #00BAFF;
+  padding: 0.3em;
+  font-weight: 100;
+  letter-spacing: 0.1em;
+}
+
+.proj-detail-line {
+  border: 0;
+  height: 0;
+  width: 60%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.proj-detail-content {
+  border: 1px solid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  color: #787878;
+}
+
+.proj-detail-content-pane-left {
+  border: 1px solid green;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proj-detail-content-pane-centre {
+  border: 1px solid red;
+  flex: 6 0 65%;
+}
+
+.proj-detail-content-pane-centre > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.pane-centre-top {
+  border: 1px solid blue;
+}
+
+.pane-centre-top > ul {
+  margin: 0;
+  padding: 1em;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pane-centre-top-img {
+  border: 1px solid green;
+  width: 400px;
+  height: 300px;
+}
+
+.pane-centre-top-img img {
+  height: 100%;
+  width: 400px;
+}
+
+.pane-centre-top-desc {
+  border: 1px solid green;
+  padding: 1.5em;
+}
+
+.pane-centre-bottom {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proj-detail-content-pane-right {
+  border: 1px solid green;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
