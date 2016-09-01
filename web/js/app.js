@@ -23,7 +23,8 @@ angular.module('app', ['ui.router', 'ngMaterial', 'ngMessages'])
                   name: {
                     value: 'defaultValue',
                     squash: true,
-                  }
+                  },
+                  index: null
                 },
                 templateUrl: '/partials/main-content/projectDetail.html',
                 controller: 'projectsController'
