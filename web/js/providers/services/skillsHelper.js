@@ -217,9 +217,29 @@ angular.module('app')
       ],
       "relevantCourses": [
         {
-          "course": "Algorithmic Toolbox",
-          "year": "Independant Courework",
-          "code": "UCB"
+          "course": "Algorithms & Data Structures",
+          "year": "2A",
+          "code": "ECE 250"
+        },
+        {
+          "course": "Digital Computers",
+          "year": "2A",
+          "code": "ECE 222"
+        },
+        {
+          "course": "Linear Algebra for Engineering",
+          "year": "2A",
+          "code": "ECE 215"
+        },
+        {
+          "course": "Electronic Circuits",
+          "year": "2A",
+          "code": "ECE 240"
+        },
+        {
+          "course": "Advanced Calculus",
+          "year": "2A",
+          "code": "ECE 205"
         },
         {
           "course": "Fundamentals of Programming",
@@ -242,34 +262,9 @@ angular.module('app')
           "code": "ECE 140"
         },
         {
-          "course": "Discrete Mathematics",
-          "year": "1B",
-          "code": "ECE 140"
-        },
-        {
-          "course": "Digital Computers",
-          "year": "2A",
-          "code": "ECE 222"
-        },
-        {
-          "course": "Electronic Circuits",
-          "year": "2A",
-          "code": "ECE 240"
-        },
-        {
-          "course": "Algorithms & Data Structures",
-          "year": "2A",
-          "code": "ECE 250"
-        },
-        {
-          "course": "Advanced Calculus",
-          "year": "2A",
-          "code": "ECE 205"
-        },
-        {
-          "course": "Linear Algebra for Engineering",
-          "year": "2A",
-          "code": "ECE 215"
+          "course": "Algorithmic Toolbox",
+          "year": "Independant Courework",
+          "code": "UCB"
         }
       ],
     };

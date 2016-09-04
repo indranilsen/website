@@ -6,9 +6,15 @@ angular.module('app')
 
 			$scope.skills = skillsHelper.skillsData;
 
+			$scope.query = "";
+
 			$scope.getTabLabel = function(label) {
 				return label.replace(/([A-Z])/g, ' $1');
 			};
+
+			$scope.resetSearch = function() {
+				$scope.query = "";
+			}
 
 		}
 	};

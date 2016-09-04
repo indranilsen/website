@@ -10,9 +10,20 @@
 .tabbed-view-cont {
   display: flex;
   justify-content: center;
-  margin-top: 2em;
 }
 
 .tabbed-view {
   width: 80%;
+}
+
+.skill-label-primary {
+  color: #00BAFF !important;
+}
+
+.skill-label-secondary {
+  color: #4588A0 !important;
+}
+
+.skill-label-tertiary {
+  color: #787878 !important;
 }

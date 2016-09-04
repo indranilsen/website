@@ -1,4 +1,11 @@
 <section ng-controller="skillsController" class="skills-cont">
+
+	<md-content class="md-no-momentum proj-search-bar">
+		<md-input-container md-no-float class="md-block">
+			<input ng-model="query" type="text" placeholder="Search">
+		</md-input-container>
+	</md-content>
+
 	<div ng-cloak class="tabbed-view-cont">
 		<md-content md-theme="default" class=tabbed-view>
 			<md-tabs md-dynamic-height md-border-bottom md-swipe-content="true" md-no-ink="true" md-center-tabs="true">
@@ -7,13 +14,13 @@
 				<md-tab label="{{getTabLabel(key)}}">
 					<md-content class="md-padding">
 						<md-list flex>
-							<md-list-item class="md-3-line" ng-repeat="element in skill" ng-click="null">
+							<md-list-item class="md-3-line" ng-repeat="element in skill | filter: query" ng-click="null">
 								<div class="md-list-item-text" layout="column" layout-align="center center">
-									<h3 ng-if="element.hasOwnProperty('item')">{{ element.item }}</h3>
-									<h4 ng-if="element.hasOwnProperty('level')">{{ element.level }}</h4>
-									<h3  ng-if="element.hasOwnProperty('course')">{{ element.course }}</h3>
-									<h4  ng-if="element.hasOwnProperty('year')">{{ element.year }}</h4>
-									<p  ng-if="element.hasOwnProperty('code')">{{ element.code }}</p>
+									<h3 class="skill-label-primary" ng-if="element.hasOwnProperty('item')">{{ element.item }}</h3>
+									<h3 class="skill-label-primary" ng-if="element.hasOwnProperty('course')">{{ element.course }}</h3>
+									<h4 class="skill-label-secondary" ng-if="element.hasOwnProperty('level')">{{ element.level }}</h4>
+									<h4 class="skill-label-secondary" ng-if="element.hasOwnProperty('year')">{{ element.year }}</h4>
+									<p class="skill-label-tertiary" ng-if="element.hasOwnProperty('code')">{{ element.code }}</p>
 								</div>
 							</md-list-item>
 						</md-list>
@@ -24,4 +31,5 @@
 			</md-tabs>
 		</md-content>
 	</div>
+
 </section>
