@@ -1,38 +1,87 @@
 <section ng-controller="skillsController" class="skills-cont">
 	<div ng-cloak class="tabbed-view-cont">
-	  <md-content md-theme="default" class=tabbed-view>
-	    <md-tabs md-dynamic-height md-border-bottom md-swipe-content="true" md-no-ink="true" md-center-tabs="true">
-	      <md-tab label="languages">
-	        <md-content class="md-padding">
-	          TEST 1
-	        </md-content>
-	      </md-tab>
-	      <md-tab label="web development">
-	        <md-content class="md-padding">
-	          TEST 2
-	        </md-content>
-	      </md-tab>
-	      <md-tab label="hardware">
-	        <md-content class="md-padding">
-	          TEST 3
-	        </md-content>
-	      </md-tab>
+		<md-content md-theme="default" class=tabbed-view>
+			<md-tabs md-dynamic-height md-border-bottom md-swipe-content="true" md-no-ink="true" md-center-tabs="true">
+
+				<md-tab label="languages">
+					<md-content class="md-padding">
+						<md-list flex>
+							<md-list-item class="md-3-line" ng-repeat="element in skills.languages" ng-click="null">
+								<div class="md-list-item-text" layout="column" layout-align="center center">
+									<h3>{{ element.item }}</h3>
+									<h4>{{ element.level }}</h4>
+								</div>
+							</md-list-item>
+						</md-list>
+					</md-content>
+				</md-tab>
+
+				<md-tab label="web development">
+					<md-content class="md-padding">
+						<md-list flex>
+							<md-list-item class="md-3-line" ng-repeat="element in skills.webDevelopment" ng-click="null">
+								<div class="md-list-item-text" layout="column" layout-align="center center">
+									<h3>{{ element.item }}</h3>
+									<h4>{{ element.level }}</h4>
+								</div>
+							</md-list-item>
+						</md-list>
+					</md-content>
+				</md-tab>
+
+				<md-tab label="hardware">
+					<md-content class="md-padding">
+						<md-list flex>
+							<md-list-item class="md-3-line" ng-repeat="element in skills.hardware" ng-click="null">
+								<div class="md-list-item-text" layout="column" layout-align="center center">
+									<h3>{{ element.item }}</h3>
+									<h4>{{ element.level }}</h4>
+								</div>
+							</md-list-item>
+						</md-list>
+					</md-content>
+				</md-tab>
+
 				<md-tab label="concepts">
-	        <md-content class="md-padding">
-	          TEST 4
-	        </md-content>
-	      </md-tab>
+					<md-content class="md-padding">
+						<md-list flex>
+							<md-list-item class="md-3-line" ng-repeat="element in skills.concepts" ng-click="null">
+								<div class="md-list-item-text" layout="column" layout-align="center center">
+									<h3>{{ element.item }}</h3>
+									<h4>{{ element.level }}</h4>
+								</div>
+							</md-list-item>
+						</md-list>
+					</md-content>
+				</md-tab>
+
 				<md-tab label="tools">
-	        <md-content class="md-padding">
-	          TEST 5
-	        </md-content>
-	      </md-tab>
+					<md-content class="md-padding">
+						<md-list flex>
+							<md-list-item class="md-3-line" ng-repeat="element in skills.tools" ng-click="null">
+								<div class="md-list-item-text" layout="column" layout-align="center center">
+									<h3>{{ element.item }}</h3>
+									<h4>{{ element.level }}</h4>
+								</div>
+							</md-list-item>
+						</md-list>
+					</md-content>
+				</md-tab>
+
 				<md-tab label="relevant courses">
-	        <md-content class="md-padding">
-	          TEST 6
-	        </md-content>
-	      </md-tab>
-	    </md-tabs>
-	  </md-content>
+					<md-content class="md-padding">
+						<md-list flex>
+							<md-list-item class="md-3-line" ng-repeat="element in skills.relevantCourses" ng-click="null">
+								<div class="md-list-item-text" layout="column" layout-align="center center">
+									<h3>{{ element.course }}</h3>
+									<h4>{{ element.year }}</h4>
+									<p>{{ element.code }}</p>
+								</div>
+							</md-list-item>
+						</md-list>
+					</md-content>
+				</md-tab>
+			</md-tabs>
+		</md-content>
 	</div>
 </section>

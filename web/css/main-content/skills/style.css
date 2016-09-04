@@ -1,5 +1,6 @@
 .skills-cont {
   min-width: 85vh;
+  background-color: transparent;
 }
 
 .skills-cont md-content {
@@ -7,13 +8,11 @@
 }
 
 .tabbed-view-cont {
-  /*border: 1px solid red;*/
   display: flex;
   justify-content: center;
   margin-top: 2em;
 }
 
 .tabbed-view {
-  /*border: 1px solid blue;*/
   width: 80%;
 }
