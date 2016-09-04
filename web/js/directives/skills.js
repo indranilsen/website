@@ -14,7 +14,7 @@ angular.module('app')
 
 			$scope.resetSearch = function() {
 				$scope.query = "";
-			}
+			};
 
 		}
 	};

@@ -5,6 +5,7 @@
 
 .skills-cont md-content {
   background-color: transparent;
+  padding: 0.5em;
 }
 
 .tabbed-view-cont {
@@ -16,14 +17,55 @@
   width: 80%;
 }
 
+.skills-list-cont {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills-list-item {
+  margin: 0;
+  padding: 0;
+  flex: 1 0 33%;
+  display: flex;
+}
+
+.skills-list-item ul {
+  margin: 0.3em;
+  padding: 0;
+  list-style: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 5px 0 #A0A0A0;
+}
+
+.skills-list-item ul li {
+  text-align: center;
+}
+
 .skill-label-primary {
+  padding: 1em;
   color: #00BAFF !important;
 }
 
+.label-less-space {
+  padding: 0.4em 0.4em 0 0.4em;
+}
+
 .skill-label-secondary {
+  padding: 0.3em;
   color: #4588A0 !important;
 }
 
 .skill-label-tertiary {
+  padding: 0.2em;
   color: #787878 !important;
+}
+
+.no-show {
+  display: none;
 }

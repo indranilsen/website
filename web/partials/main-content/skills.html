@@ -9,8 +9,25 @@
 	<div ng-cloak class="tabbed-view-cont">
 		<md-content md-theme="default" class=tabbed-view>
 			<md-tabs md-dynamic-height md-border-bottom md-swipe-content="true" md-no-ink="true" md-center-tabs="true">
-
 				<span ng-repeat="(key, skill) in skills">
+				<md-tab label="{{getTabLabel(key)}}">
+					<md-content>
+						<ul class="skills-list-cont">
+							<li class="skills-list-item" ng-repeat="element in skill | filter: query">
+								<ul>
+									<li class="skill-label-primary" ng-if="element.hasOwnProperty('item')">{{ element.item }}</li>
+									<li class="skill-label-primary label-less-space" ng-if="element.hasOwnProperty('course')">{{ element.course }}</li>
+									<li class="skill-label-secondary no-show" ng-if="element.hasOwnProperty('level')">{{ element.level }}</li>
+									<li class="skill-label-secondary" ng-if="element.hasOwnProperty('year')">{{ element.year }}</li>
+									<li class="skill-label-tertiary" ng-if="element.hasOwnProperty('code')">{{ element.code }}</li>
+								</ul>
+							</li>
+						</ul>
+					</md-content>
+				</md-tab>
+			</span>
+
+				<!-- <span ng-repeat="(key, skill) in skills">
 				<md-tab label="{{getTabLabel(key)}}">
 					<md-content class="md-padding">
 						<md-list flex>
@@ -26,7 +43,7 @@
 						</md-list>
 					</md-content>
 				</md-tab>
-				</span>
+				</span> -->
 
 			</md-tabs>
 		</md-content>
