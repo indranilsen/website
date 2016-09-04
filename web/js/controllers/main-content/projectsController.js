@@ -5,9 +5,11 @@ angular.module('app')
         $scope.state = $state.current;
         $scope.params = $stateParams;
 
-				$scope.project = projectsHelper.projects;
+				$scope.project = projectsHelper.projectsData;
 
         $scope.index = $scope.params.index;
+
+        console.log($scope.project);
 
   			$scope.nextProject = function() {
           if ($scope.index < ($scope.project.length-1)) {

@@ -4,7 +4,7 @@ angular.module('app')
 		templateUrl: 'partials/main-content/projects.html',
 		controller: function($scope, $rootScope) {
 
-			$scope.personalProjects = projectsHelper.projects;
+			$scope.personalProjects = projectsHelper.projectsData;
 
 		}
 	};
