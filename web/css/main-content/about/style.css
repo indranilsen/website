@@ -1,0 +1,28 @@
+.about-cont {
+  min-height: 85vh;
+}
+
+.about-content {
+  margin: 0;
+  padding: 0;
+  color: #787878;
+  list-style: none;
+}
+
+.about-pic {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.about-pic img {
+  width: 480px;
+  height: 480px;
+}
+
+.about-desc {
+  padding: 3em;
+  font-size: 1.1em;
+  letter-spacing: 0.09em;
+  text-align: justify;
+}

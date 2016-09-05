@@ -40,7 +40,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 0 5px 0 #A0A0A0;
+  border: 1px solid #F1F1F1;
+  /*box-shadow: 0 0 5px 0 #A0A0A0;*/
 }
 
 .skills-list-item ul li {

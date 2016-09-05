@@ -46,7 +46,7 @@
   list-style: none;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap-reverse;;
+  flex-wrap: wrap-reverse;
   width: 80%;
 }
 
