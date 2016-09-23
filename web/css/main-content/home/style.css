@@ -93,3 +93,19 @@
 .greet-social-btn-cont li a:hover {
   color: #00BAFF;
 }
+
+@media only screen
+and (max-device-width : 742px) {
+	.greet-message {
+    width: 70%;
+  }
+
+  .greet-btn-cont {
+    width: 70%;
+  }
+
+  .greet-social-btn-cont {
+    width: 50%;
+    font-size: 1.5em;
+  }
+}
