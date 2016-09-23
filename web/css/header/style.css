@@ -75,3 +75,14 @@
 .header-cont .links ul li a:hover {
 	color: #09BCFF;
 }
+
+@media only screen
+and (max-device-width : 742px) {
+	.header-cont .home {
+		width: 100%;
+	}
+
+	.header-cont .links {
+		width: 100%;
+	}
+}
