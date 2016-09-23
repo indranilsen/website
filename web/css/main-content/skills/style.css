@@ -1,5 +1,4 @@
 .skills-cont {
-  min-width: 85vh;
   background-color: transparent;
 }
 
@@ -69,4 +68,11 @@
 
 .no-show {
   display: none;
+}
+
+@media only screen
+and (max-device-width : 742px) {
+  .tabbed-view {
+    max-width: 600px;
+  }
 }
