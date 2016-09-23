@@ -85,4 +85,8 @@ and (max-device-width : 742px) {
 	.header-cont .links {
 		width: 100%;
 	}
+
+	.header-cont .links ul li a {
+		font-size: 1em;
+	}
 }
