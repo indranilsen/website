@@ -151,3 +151,10 @@
 .social-icon a:hover {
   color: #00BAFF;
 }
+
+@media only screen
+and (max-device-width : 742px) {
+  .contact-line-vert {
+    display: none;
+  }
+}
