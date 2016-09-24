@@ -16,6 +16,7 @@
   ],
   "author": "Indranil Sen",
   "license": "MIT",
+  "engines": {"node": ">=6.5.0"},
   "devDependencies": {
     "add-stream": "^1.0.0",
     "del": "^2.2.2",
