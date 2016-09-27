@@ -33,6 +33,13 @@ gulp.task('img-copy', function(cb) {
 	cb();
 });
 
+gulp.task('assets-copy', function(cb) {
+	console.log('---------- Assets Copy');
+	gulp.src(config.assets.tasks.src, {read: true})
+	.pipe(gulp.dest(config.prod.main_folder+'/'+config.folders.assets));
+	cb();
+});
+
 gulp.task('partials-copy', function(cb) {
 	console.log('---------- Partials Copy');
 	gulp.src(config.partials.tasks.src, {read: true})
@@ -40,7 +47,7 @@ gulp.task('partials-copy', function(cb) {
 	cb();
 });
 
-gulp.task('scripts',['partials-copy','img-copy'], function(){
+gulp.task('scripts',['partials-copy','img-copy', 'assets-copy'], function(){
 	console.log('---------- scripts');
 
 	gulp.src(config.js.tasks.scripts)

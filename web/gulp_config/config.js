@@ -8,6 +8,7 @@ var config = {
 		"js":"js",
 		"partials":"partials",
 		"img":"img",
+		"assets":"assets"
 	},
 	"inject": {
 		"injectOptionsCss": {
@@ -54,6 +55,11 @@ var config = {
 	"img": {
 		"tasks": {
 			"src": "img/**/*"
+		}
+	},
+	"assets": {
+		"tasks": {
+			"src": "assets/**/*"
 		}
 	}
 };
