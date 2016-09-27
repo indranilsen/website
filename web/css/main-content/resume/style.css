@@ -1,0 +1,9 @@
+.resume-cont {
+  display: flex;
+}
+
+.resume-cont > iframe {
+  flex: 1 1 100%;
+  width:100vh;
+  height:85vh;
+}
