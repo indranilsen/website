@@ -1,8 +1,8 @@
 npm-debug.log
 dist
-server/node_modules
-web/node_modules
-web/bower_components
+node_modules
+public/node_modules
+public/bower_components
 
 ###################
 #  MAC OS files

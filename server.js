@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var argv = require('yargs').argv;
 var port = argv.port || 3000;
-var dist = argv.prod  ? '/dist' :'';
+var dist = argv.prod  ? '/dist' :'/public';
 var compression = require('compression');
 
 app.use(compression());//GZIP
@@ -15,4 +15,4 @@ app.use(express.static(__dirname+dist));
 
 
 app.listen(port);
-console.log("Server listening on port " + port + " with mode prod? "+ (argv.prod ? true:false));
+console.log("Server listening on port " + port + " with mode: "+ (argv.prod ? 'PROD': 'DEV'));

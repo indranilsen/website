@@ -33,7 +33,7 @@ var config = {
 	},
 	"css": {
 		"tasks": {
-			"styles": ["css/**/*.css","!css/styles-main.css"]
+			"styles": ["public/css/**/*.css","!public/css/styles-main.css"]
 		},
 		concat_file_name : function() {
 			return config.APP_NAME+'-v'+config.VERSION+'.min.css';
@@ -41,12 +41,12 @@ var config = {
 	},
 	"partials": {
 		"tasks": {
-			"src": "partials/**/*"
+			"src": "public/partials/**/*"
 		}
 	},
 	"js": {
 		"tasks": {
-			"scripts": "js/**/*.js"
+			"scripts": "public/js/**/*.js"
 		},
 		concat_file_name : function() {
 			return config.APP_NAME+'-v'+config.VERSION+'.min.js';
@@ -54,12 +54,12 @@ var config = {
 	},
 	"img": {
 		"tasks": {
-			"src": "img/**/*"
+			"src": "public/img/**/*"
 		}
 	},
 	"assets": {
 		"tasks": {
-			"src": "assets/**/*"
+			"src": "public/assets/**/*"
 		}
 	}
 };
