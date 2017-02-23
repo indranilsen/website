@@ -15,7 +15,8 @@
 				<li><a ui-sref="contact">Contact</a></li>
 				<li><a>
 					<md-menu md-position-mode="target-right target" >
-			          <md-button aria-label="Open menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+			          <md-button aria-label="Open menu" class="md-icon-button"
+					  ng-click="$mdMenu.open($event)" ng-mouseenter="hoverOpen($mdMenu.open)">
 			            <i class="fa fa-bars" aria-hidden="true"></i>
 			          </md-button>
 			          <md-menu-content width="4" >

@@ -1,6 +1,12 @@
 angular.module('app')
-.controller('headerController', function($scope, $state) {
+.controller('headerController', function($scope, $state, $timeout) {
 	console.log("Hello from headerController");
+	$scope.hoverOpen = function(openMenu) {
+		$timeout(function(){
+			openMenu();
+		}, 700);
+	};
+
 	$scope.menuItems = [
 		{
 			label: 'Blog',

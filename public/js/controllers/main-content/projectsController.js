@@ -9,8 +9,6 @@ angular.module('app')
 
         $scope.index = $scope.params.index;
 
-        console.log($scope.project);
-
   			$scope.nextProject = function() {
           if ($scope.index < ($scope.project.length-1)) {
             $scope.index++;
