@@ -13,6 +13,23 @@
 				<li><a ui-sref="resume">Resume</a></li>
 				<li><a ui-sref="skills">Skills</a></li>
 				<li><a ui-sref="contact">Contact</a></li>
+				<li><a>
+					<md-menu md-position-mode="target-right target" >
+			          <md-button aria-label="Open menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+			            <i class="fa fa-bars" aria-hidden="true"></i>
+			          </md-button>
+			          <md-menu-content width="4" >
+			            <md-menu-item ng-repeat="item in menuItems">
+			              <md-button ng-click="navigateToLink($index)">
+			                  <div layout="row" flex>
+			                    <p flex>{{item.label}}</p>
+			                    <md-icon md-menu-align-target style="margin: auto 3px auto 0;"></md-icon>
+			                  </div>
+			              </md-button>
+			            </md-menu-item>
+			          </md-menu-content>
+			        </md-menu>
+				</a></li>
 			</ul>
 		</nav>
 	</div>

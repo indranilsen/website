@@ -26,6 +26,10 @@
 	flex: 1 1 auto;
 }
 
+.header-cont .content ul li:last-child {
+	font-size: 1.2em;
+}
+
 .header-cont .content ul li a {
 	cursor: pointer;
 }

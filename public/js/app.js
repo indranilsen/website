@@ -40,6 +40,18 @@ angular.module('app', ['ui.router', 'ngMaterial', 'ngMessages'])
             .state('contact', {
                 url: '/contact',
                 template: "<indranil-sen-main-contact>"
+            })
+            .state('blog', {
+                url: '/blog',
+                template: "<indranil-sen-main-contact>"
+            })
+            .state('pictures', {
+                url: '/pictures',
+                template: "<indranil-sen-main-contact>"
+            })
+            .state('programs', {
+                url: '/programs',
+                template: "<indranil-sen-main-contact>"
             });
 
     /*================== MATERIAL THEMING ==================*/
