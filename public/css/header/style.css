@@ -73,11 +73,20 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: .8em;
+	letter-spacing: 1px;
 	transition: all 300ms ease-out;
 }
 
 .header-cont .links ul li a:hover {
 	color: #09BCFF;
+}
+
+.dropdown {
+	color: #717171;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 0.85em;
+	letter-spacing: 1px;
 }
 
 @media only screen

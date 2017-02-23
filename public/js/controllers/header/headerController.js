@@ -19,8 +19,14 @@ angular.module('app')
 		{
 			label: 'Programs',
 			link: 'programs'
+		},
+		{
+			label: 'Videos',
+			link: 'videos'
 		}
 	];
+
+	$scope.menuItemsClass = 'dropdown';
 
 	$scope.navigateToLink = function(index) {
 		$state.go($scope.menuItems[index].link);

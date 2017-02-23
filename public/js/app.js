@@ -52,6 +52,10 @@ angular.module('app', ['ui.router', 'ngMaterial', 'ngMessages'])
             .state('programs', {
                 url: '/programs',
                 template: "<indranil-sen-main-contact>"
+            })
+            .state('videos', {
+                url: '/videos',
+                template: "<indranil-sen-main-videos>"
             });
 
     /*================== MATERIAL THEMING ==================*/
