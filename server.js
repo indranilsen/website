@@ -1,9 +1,13 @@
-var express = require("express");
-var app = express();
+var express = require('express');
+var compression = require('compression');
 var argv = require('yargs').argv;
+
+var apiRouter = require('./src/routes/apiRoutes');
+
 var port = argv.port || 3000;
 var dist = argv.prod  ? '/dist' :'/public';
-var compression = require('compression');
+
+var app = express();
 
 app.use(compression());//GZIP
 
@@ -13,6 +17,7 @@ app.use('/css', express.static(__dirname + dist+'/css', { maxAge : oneDay*30 }))
 app.use('/img', express.static(__dirname + dist+'/img', { maxAge : oneDay*30 }));//30 days
 app.use(express.static(__dirname+dist));
 
+app.use('/api', apiRouter);
 
 app.listen(port);
 console.log("Server listening on port " + port + " with mode: "+ (argv.prod ? 'PROD': 'DEV'));
