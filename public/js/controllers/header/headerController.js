@@ -2,7 +2,7 @@ angular.module('app')
 .controller('headerController', function($scope, $state, $timeout) {
 	console.log("Hello from headerController");
 	$scope.hoverOpen = function($mdOpenMenu, ev) {
-		let originatorEvent;
+		var originatorEvent;
 		$timeout(function(){
 			originatorEvent = ev;
 			$mdOpenMenu(ev);
