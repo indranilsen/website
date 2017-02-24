@@ -1,9 +1,11 @@
 angular.module('app')
 .controller('headerController', function($scope, $state, $timeout) {
 	console.log("Hello from headerController");
-	$scope.hoverOpen = function(openMenu) {
+	$scope.hoverOpen = function($mdOpenMenu, ev) {
+		let originatorEvent;
 		$timeout(function(){
-			openMenu();
+			originatorEvent = ev;
+			$mdOpenMenu(ev);
 		}, 700);
 	};
 
