@@ -19,6 +19,22 @@ casper.then(function() {
     videoObj = this.evaluate(getVideos, config.selectors.query.videos);
 });
 
+casper.then(function() {
+    var count = 0;
+    casper.repeat(1, function() {
+        console.log('==>\n');
+        var video = JSON.parse(String(videoObj[count]))
+        var link = 'https://www.youtube.com' + video.id;
+        casper.thenOpen(link, function() {
+            var desc = this.evaluate(function() {
+                return document.querySelector('#eow-description').innerHTML
+            });
+            require('utils').dump(desc);
+        });
+        count++;
+    });
+});
+
 casper.run(function() {
     this.echo('Completed ...\n');
     for(var i = 0; i<videoObj.length; i++) {

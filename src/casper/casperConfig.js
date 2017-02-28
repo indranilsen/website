@@ -8,11 +8,11 @@ var config = function() {
 
     var selectors = {
         xPath: {
-            uploads: '//*[@id="browse-items-primary"]/li[1]/div[1]/div/div/div/div[1]/h2/a[1]',
-
+            uploads: '//*[@id="browse-items-primary"]/li[1]/div[1]/div/div/div/div[1]/h2/a[1]'
         },
         query: {
-            videos: '#channels-browse-content-grid > li > div > div.yt-lockup-dismissable > div.yt-lockup-content'
+            videos: '#channels-browse-content-grid > li > div > div.yt-lockup-dismissable > div.yt-lockup-content',
+            description: '#eow-description'
         }
     };
 
