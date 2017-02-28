@@ -20,8 +20,10 @@ casper.then(function() {
 });
 
 casper.run(function() {
-    this.echo('Complete ...\n');
-    console.log(videoObj);
+    this.echo('Completed ...\n');
+    for(var i = 0; i<videoObj.length; i++) {
+        console.log(JSON.parse(String(videoObj[i])).id);
+    }
     console.log('\n\n\n\nTotal: ', videoObj.length);
     this.exit();
 });
@@ -32,7 +34,7 @@ function getVideos(query) {
     return Array.prototype.map.call(videos, function(elem) {
         return JSON.stringify({
             id: elem.querySelector('h3 > a').getAttribute('href'),
-            name: elem.querySelector('h3 > a').getAttribute('title'),
+            title: elem.querySelector('h3 > a').getAttribute('title'),
             views: elem.querySelector('div > ul > li:nth-child(1)').innerHTML,
             uploadDate: elem.querySelector('div > ul > li:nth-child(2)').innerHTML
         });
