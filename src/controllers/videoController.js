@@ -1,11 +1,11 @@
 var videoController = function(videoService) {
-    var video = function(req, res) {
+    var getVideos = function(req, res) {
         videoService.service();
         res.send('Video Controller');
     };
 
     return {
-        video: video
+        getVideos: getVideos
     }
 };
 

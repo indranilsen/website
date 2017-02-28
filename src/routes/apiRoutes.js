@@ -9,6 +9,6 @@ apiRouter.route('/').get(function(req, res) {
     res.send('Api Base');
 });
 
-apiRouter.route('/video').get(videoController.video);
+apiRouter.route('/video').get(videoController.getVideos);
 
 module.exports = apiRouter;
