@@ -21,26 +21,34 @@ casper.then(function() {
 
 casper.then(function() {
     var count = 0;
-    casper.repeat(1, function() {
+    casper.repeat(videoObj.length, function() {
+        console.log(count);
         console.log('==>\n');
         var video = JSON.parse(String(videoObj[count]))
         var link = 'https://www.youtube.com' + video.id;
         casper.thenOpen(link, function() {
-            var desc = this.evaluate(function() {
-                return document.querySelector('#eow-description').innerHTML
-            });
-            require('utils').dump(desc);
+            this.waitForSelector('#eow-description',function(){
+                this.echo('selector');
+                var desc = this.evaluate(function() {
+                    return document.querySelector('#eow-description').innerHTML;
+                });
+                video.description = desc;
+                videoObj[count] = JSON.stringify(video);
+                count++;
+            }, function() {
+                this.echo('Timout');
+            }, 3000);
         });
-        count++;
     });
 });
 
 casper.run(function() {
     this.echo('Completed ...\n');
     for(var i = 0; i<videoObj.length; i++) {
-        console.log(JSON.parse(String(videoObj[i])).id);
+        console.log(JSON.parse(String(videoObj[i])).id), JSON.parse(String(videoObj[i])).description;
     }
     console.log('\n\n\n\nTotal: ', videoObj.length);
+    console.log(videoObj);
     this.exit();
 });
 
