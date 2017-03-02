@@ -32,7 +32,14 @@ casper.then(function() {
                 var desc = this.evaluate(function() {
                     return document.querySelector('#eow-description').innerHTML;
                 });
+                var vote = this.evaluate(function() {
+                    var likes = document.querySelector('#watch8-sentiment-actions > span > span:nth-child(1) > button > span').innerHTML;
+                    var dislikes = document.querySelector('#watch8-sentiment-actions > span > span:nth-child(3) > button > span').innerHTML;
+                    return likes+':'+dislikes;
+                });
                 video.description = desc;
+                video.likes = String(vote).split(':')[0];
+                video.dislikes = String(vote).split(':')[1];
                 videoObj[count] = JSON.stringify(video);
                 count++;
             }, function() {
