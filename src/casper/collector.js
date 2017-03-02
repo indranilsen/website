@@ -20,8 +20,8 @@ casper.then(function() {
 });
 
 casper.then(function() {
-    var count = 0;
-    casper.repeat(videoObj.length, function() {
+    var count = 1;
+    casper.repeat(1, function() {
         console.log(count);
         console.log('==>\n');
         var video = JSON.parse(String(videoObj[count]))
@@ -37,10 +37,58 @@ casper.then(function() {
                     var dislikes = document.querySelector('#watch8-sentiment-actions > span > span:nth-child(3) > button > span').innerHTML;
                     return likes+':'+dislikes;
                 });
+
                 video.description = desc;
                 video.likes = String(vote).split(':')[0];
                 video.dislikes = String(vote).split(':')[1];
                 videoObj[count] = JSON.stringify(video);
+
+                this.thenClick('#action-panel-overflow-button', function() {
+                    this.echo('clicked more');
+                    this.capture('click.png');
+                    this.waitForSelector('#action-panel-overflow-menu', function() {
+                        this.echo('got more');
+                        this.thenClick('#action-panel-overflow-menu > li:nth-child(3) > button', function() {
+                            this.echo('clicked stat');
+                            this.waitForSelector('#watch-action-panels', function() {
+                                this.echo('@@@@');
+                                this.wait(1000, function() {
+                                    this.echo('waitied 1 sec');
+                                    this.capture('test.png');
+                                    this.thenClick('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-watch-time.yt-uix-button.yt-uix-tabs-tab', function() {
+                                        var video = JSON.parse(String(videoObj[count]));
+                                        var timeWatched = this.evaluate(function() {
+                                            return document.querySelector('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-watch-time.yt-uix-button.yt-uix-tabs-tab.yt-uix-tabs-selected.yt-uix-button-toggled > div').innerHTML;
+                                        });
+                                        var avgTimeWatched = this.evaluate(function() {
+                                            return document.querySelector('#stats-chart-tab-watch-time > span > span.menu-metric-value').innerHTML;
+                                        });
+                                        var subsDriven = this.evaluate(function() {
+                                            return document.querySelector('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-subscribers.yt-uix-button.yt-uix-tabs-tab > div').innerHTML;
+                                        });
+                                        var shares = this.evaluate(function() {
+                                            return document.querySelector('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-shares.yt-uix-button.yt-uix-tabs-tab > div').innerHTML;
+                                        });
+
+                                        var timeWatchedVal = String(timeWatched).split(' ')[0];
+                                        var timeWatchedUnit = String(timeWatched).split(' ')[1].slice(4, (String(timeWatched).length)-5);
+
+                                        video.timeWatched = timeWatchedVal+' '+timeWatchedUnit;
+                                        video.subsDriven = subsDriven;
+                                        video.shares = shares;
+
+                                        videoObj[count] = JSON.stringify(video);
+
+                                    });
+                                });
+                            }, function() {
+                                this.echo('Tiimeout');
+                            }, 1000);
+                        });
+                    }, function() {
+                        this.echo('Tiimeout');
+                    }, 3000);
+                });
                 count++;
             }, function() {
                 this.echo('Timout');
