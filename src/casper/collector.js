@@ -4,10 +4,21 @@ var x = require('casper').selectXPath;
 var config = require('casperConfig')();
 
 var videoObj = [];
+var target;
+
+if (Object.keys(casper.cli.options) === 0) {
+    casper.echo('No search target specified.').exit();
+} else {
+    if(casper.cli.options.target) {
+        target = casper.cli.options.target;
+    } else {
+        casper.echo('Invalid traget.').exit();
+    }
+}
 
 casper.userAgent(config.vars.userAgent);
 
-casper.start(config.vars.targetPage, function() {
+casper.start(config.vars.targetPage+target, function() {
     this.echo(this.getTitle())
 });
 
