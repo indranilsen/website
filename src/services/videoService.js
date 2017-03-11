@@ -1,22 +1,24 @@
 var exec = require('child_process').exec;
 var fs = require('fs');
+var path = require('path');
 
-let videoList = '../casper/videoList.json';
+let videoFile = path.resolve(__dirname+'/../casper/videoFile.json');
 let target = 'Sirius011196'
-let collectorFile = __dirname+'/../casper/collector.js';
+let collectorFile = path.resolve(__dirname+'/../casper/collector.js');
 let casperCommand = 'casperjs ' + collectorFile + ' --target=' + target;
 
 var videoService = function() {
     var collectVideos = function(req, res) {
-        if(!checkObjectFile()) {
+        if(!checkVideoFile()) {
             console.log();
             console.log('Does not exist');
             casper()
-                .then(function(data) {
-                    console.log('**** collectVideos ****\n', data);
+                .then(writeVideoFile)
+                .then(function(){
+                    console.log("DONE");
                 })
                 .catch(function(err) {
-                    console.log('**** ERROR ****\n', err);
+                    console.log(err);
                 });
         } else {
             console.log('Exists');
@@ -35,8 +37,8 @@ var videoService = function() {
         });
     }
 
-    function checkObjectFile() {
-        fs.stat(videoList, function(err, stats) {
+    function checkVideoFile() {
+        fs.stat(videoFile, function(err, stats) {
             if(err) {
                 console.log(err);
                 return false;
@@ -45,6 +47,18 @@ var videoService = function() {
                 return true;
             }
         })
+    }
+
+    function writeVideoFile(data) {
+        return new Promise(function(resolve, reject) {
+            fs.writeFile(videoFile, data, function(err) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve();
+                }
+            });
+        });
     }
 
     return {
