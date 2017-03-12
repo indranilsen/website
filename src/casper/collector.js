@@ -27,8 +27,8 @@ casper.then(function() {
 });
 
 casper.then(function() {
-    var count = 1;
-    casper.repeat(2, function() {
+    var count = -1;
+    casper.repeat(videoObj.length, function() {
         count++;
         var video = JSON.parse(String(videoObj[count]))
         var link = 'https://www.youtube.com' + video.id;
@@ -50,6 +50,19 @@ casper.then(function() {
                 video.likes = String(vote).split(':')[0];
                 video.dislikes = String(vote).split(':')[1];
                 video.datePublished = String(datePublished).substr(('Published on ').length, String(datePublished).length);
+
+                var vid = video.id;
+                var watchVid = 'https://www.youtube.com' + vid;
+                vid = vid.slice('watch?v='.length + 1, vid.length);
+                var embedVid = 'https://www.youtube.com/embed/' + vid + '?ecver=1';
+                var shareVid = 'https://youtu.be/' + vid;
+
+                video.link = {
+                    watch: watchVid,
+                    embed: embedVid,
+                    share: shareVid
+                }
+
                 videoObj[count] = JSON.stringify(video);
 
                 this.thenClick('#action-panel-overflow-button', function() {
