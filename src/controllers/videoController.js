@@ -1,11 +1,13 @@
 var videoController = function(videoService) {
     var getVideos = function(req, res) {
-        let result = videoService.collectVideos();
-        if(result) {
-            res.send(result);
-        } else {
-            res.send('Video Controller');
-        }
+        videoService.collectVideos()
+            .then(function(data) {
+                res.send(data);
+            })
+            .catch(function(err) {
+                console.log(err);
+                res.send(500);
+            })
     };
 
     return {

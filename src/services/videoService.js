@@ -9,17 +9,23 @@ let casperCommand = 'casperjs ' + collectorFile + ' --target=' + target;
 
 var videoService = function() {
     var collectVideos = function(req, res) {
-        checkVideoFile().then(function(fileExists) {
-            if(!fileExists) {
-                console.log('Does not exist');
-                casper()
-                    .then(writeVideoFile)
-                    .catch(function(err) {
-                        console.log(err);
-                    });
-            } else {
-                console.log('Exists');
-            }
+        return new Promise(function(resolve, reject) {
+            checkVideoFile().then(function(fileExists) {
+                if(!fileExists) {
+                    console.log('Does not exist');
+                    casper()
+                        .then(writeVideoFile)
+                        .catch(function(err) {
+                            reject(err);
+                        })
+                        .then(function() {
+                            resolve(require(videoFile));
+                        });
+                } else {
+                    console.log('Exists');
+                    resolve(require(videoFile));
+                }
+            });
         });
     };
 

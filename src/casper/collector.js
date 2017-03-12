@@ -27,8 +27,8 @@ casper.then(function() {
 });
 
 casper.then(function() {
-    var count = -1;
-    casper.repeat(6, function() {
+    var count = 1;
+    casper.repeat(2, function() {
         count++;
         var video = JSON.parse(String(videoObj[count]))
         var link = 'https://www.youtube.com' + video.id;
@@ -103,7 +103,7 @@ casper.then(function() {
 });
 
 casper.run(function() {
-    console.log(videoObj);
+    console.log('['+videoObj+']');
     this.exit();
 });
 
