@@ -27,8 +27,9 @@ casper.then(function() {
 });
 
 casper.then(function() {
-    var count = 3;
-    casper.repeat(2, function() {
+    var count = -1;
+    casper.repeat(6, function() {
+        count++;
         var video = JSON.parse(String(videoObj[count]))
         var link = 'https://www.youtube.com' + video.id;
         casper.thenOpen(link, function() {
@@ -41,51 +42,60 @@ casper.then(function() {
                     var dislikes = document.querySelector('#watch8-sentiment-actions > span > span:nth-child(3) > button > span').innerHTML;
                     return likes+':'+dislikes;
                 });
+                var datePublished = this.evaluate(function() {
+                    return document.querySelector('#watch-uploader-info > strong').innerHTML;
+                });
 
-                video.description = desc;
+                video.description = String(desc);
                 video.likes = String(vote).split(':')[0];
                 video.dislikes = String(vote).split(':')[1];
+                video.datePublished = String(datePublished).substr(('Published on ').length, String(datePublished).length);
                 videoObj[count] = JSON.stringify(video);
 
                 this.thenClick('#action-panel-overflow-button', function() {
                     this.waitForSelector('#action-panel-overflow-menu', function() {
-                        this.thenClick('#action-panel-overflow-menu > li:nth-child(3) > button', function() {
-                            this.waitForSelector('#watch-action-panels', function() {
-                                this.wait(1000, function() {
-                                    this.capture('test.png');
-                                    this.thenClick('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-watch-time.yt-uix-button.yt-uix-tabs-tab', function() {
-                                        var video = JSON.parse(String(videoObj[count]));
-                                        var timeWatched = this.evaluate(function() {
-                                            return document.querySelector('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-watch-time.yt-uix-button.yt-uix-tabs-tab.yt-uix-tabs-selected.yt-uix-button-toggled > div').innerHTML;
-                                        });
-                                        var avgTimeWatched = this.evaluate(function() {
-                                            return document.querySelector('#stats-chart-tab-watch-time > span > span.menu-metric-value').innerHTML;
-                                        });
-                                        var subsDriven = this.evaluate(function() {
-                                            return document.querySelector('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-subscribers.yt-uix-button.yt-uix-tabs-tab > div').innerHTML;
-                                        });
-                                        var shares = this.evaluate(function() {
-                                            return document.querySelector('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-shares.yt-uix-button.yt-uix-tabs-tab > div').innerHTML;
-                                        });
-
-                                        var timeWatchedVal = String(timeWatched).split(' ')[0];
-                                        var timeWatchedUnit = String(timeWatched).split(' ')[1].slice(4, (String(timeWatched).length)-5);
-
-                                        video.timeWatched = timeWatchedVal+' '+timeWatchedUnit;
-                                        video.subsDriven = subsDriven;
-                                        video.shares = shares;
-
-                                        videoObj[count] = JSON.stringify(video);
-
-                                    });
-                                });
-                            }, function() {
-                            }, 1000);
+                        var statsButton = '#action-panel-overflow-menu > li:nth-child(3) > button';
+                        var statsExists = this.evaluate(function() {
+                            if(document.querySelector('#action-panel-overflow-menu > li:nth-child(3) > button > span').innerHTML === 'Statistics') {
+                                return true;
+                            } else {
+                                return false;
+                            }
                         });
+                        if(statsExists) {
+                            this.thenClick('#action-panel-overflow-menu > li:nth-child(3) > button', function() {
+                                this.waitForSelector('#watch-action-panels', function() {
+                                    this.wait(1000, function() {
+                                        this.thenClick('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-watch-time.yt-uix-button.yt-uix-tabs-tab', function() {
+                                            var video = JSON.parse(String(videoObj[count]));
+                                            var timeWatched = this.evaluate(function() {
+                                                return document.querySelector('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-watch-time.yt-uix-button.yt-uix-tabs-tab.yt-uix-tabs-selected.yt-uix-button-toggled > div').innerText;
+                                            });
+                                            var avgTimeWatched = this.evaluate(function() {
+                                                return document.querySelector('#stats-chart-tab-watch-time > span > span.menu-metric-value').innerHTML;
+                                            });
+                                            var subsDriven = this.evaluate(function() {
+                                                return document.querySelector('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-subscribers.yt-uix-button.yt-uix-tabs-tab > div').innerHTML;
+                                            });
+                                            var shares = this.evaluate(function() {
+                                                return document.querySelector('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-shares.yt-uix-button.yt-uix-tabs-tab > div').innerHTML;
+                                            });
+
+                                            video.timeWatched = timeWatched;
+                                            video.subsDriven = subsDriven;
+                                            video.shares = shares;
+
+                                            videoObj[count] = JSON.stringify(video);
+
+                                        });
+                                    });
+                                }, function() {
+                                }, 1000);
+                            })
+                        }
                     }, function() {
                     }, 3000);
                 });
-                count++;
             }, function() {
             }, 3000);
         });
