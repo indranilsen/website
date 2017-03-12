@@ -18,28 +18,21 @@ if (Object.keys(casper.cli.options) === 0) {
 
 casper.userAgent(config.vars.userAgent);
 
-casper.start(config.vars.targetPage+target, function() {
-    this.echo(this.getTitle())
-});
+casper.start(config.vars.targetPage+target);
 
-casper.thenClick(x(config.selectors.xPath.uploads), function() {
-    console.log('Clicked Uploads');
-});
+casper.thenClick(x(config.selectors.xPath.uploads));
 
 casper.then(function() {
     videoObj = this.evaluate(getVideos, config.selectors.query.videos);
 });
 
 casper.then(function() {
-    var count = 1;
-    casper.repeat(1, function() {
-        console.log(count);
-        console.log('==>\n');
+    var count = 3;
+    casper.repeat(2, function() {
         var video = JSON.parse(String(videoObj[count]))
         var link = 'https://www.youtube.com' + video.id;
         casper.thenOpen(link, function() {
             this.waitForSelector('#eow-description',function(){
-                this.echo('selector');
                 var desc = this.evaluate(function() {
                     return document.querySelector('#eow-description').innerHTML;
                 });
@@ -55,16 +48,10 @@ casper.then(function() {
                 videoObj[count] = JSON.stringify(video);
 
                 this.thenClick('#action-panel-overflow-button', function() {
-                    this.echo('clicked more');
-                    this.capture('click.png');
                     this.waitForSelector('#action-panel-overflow-menu', function() {
-                        this.echo('got more');
                         this.thenClick('#action-panel-overflow-menu > li:nth-child(3) > button', function() {
-                            this.echo('clicked stat');
                             this.waitForSelector('#watch-action-panels', function() {
-                                this.echo('@@@@');
                                 this.wait(1000, function() {
-                                    this.echo('waitied 1 sec');
                                     this.capture('test.png');
                                     this.thenClick('#watch-actions-stats > table > tbody > tr > td.stats-bragbar.stats-bragbar-watch-time.yt-uix-button.yt-uix-tabs-tab', function() {
                                         var video = JSON.parse(String(videoObj[count]));
@@ -93,27 +80,19 @@ casper.then(function() {
                                     });
                                 });
                             }, function() {
-                                this.echo('Tiimeout');
                             }, 1000);
                         });
                     }, function() {
-                        this.echo('Tiimeout');
                     }, 3000);
                 });
                 count++;
             }, function() {
-                this.echo('Timout');
             }, 3000);
         });
     });
 });
 
 casper.run(function() {
-    this.echo('Completed ...\n');
-    for(var i = 0; i<videoObj.length; i++) {
-        console.log(JSON.parse(String(videoObj[i])).id), JSON.parse(String(videoObj[i])).description;
-    }
-    console.log('\n\n\n\nTotal: ', videoObj.length);
     console.log(videoObj);
     this.exit();
 });
