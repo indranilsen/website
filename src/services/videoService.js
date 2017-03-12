@@ -9,20 +9,18 @@ let casperCommand = 'casperjs ' + collectorFile + ' --target=' + target;
 
 var videoService = function() {
     var collectVideos = function(req, res) {
-        if(!checkVideoFile()) {
-            console.log();
-            console.log('Does not exist');
-            casper()
-                .then(writeVideoFile)
-                .then(function(){
-                    console.log("DONE");
-                })
-                .catch(function(err) {
-                    console.log(err);
-                });
-        } else {
-            console.log('Exists');
-        }
+        checkVideoFile().then(function(fileExists) {
+            if(!fileExists) {
+                console.log('Does not exist');
+                casper()
+                    .then(writeVideoFile)
+                    .catch(function(err) {
+                        console.log(err);
+                    });
+            } else {
+                console.log('Exists');
+            }
+        });
     };
 
     function casper() {
@@ -38,15 +36,15 @@ var videoService = function() {
     }
 
     function checkVideoFile() {
-        fs.stat(videoFile, function(err, stats) {
-            if(err) {
-                console.log(err);
-                return false;
-            } else {
-                console.log(stat);
-                return true;
-            }
-        })
+        return new Promise(function(resolve, reject) {
+            fs.stat(videoFile, function(err, stats) {
+                if(err) {
+                    resolve(false);
+                } else {
+                    resolve(true);
+                }
+            });
+        });
     }
 
     function writeVideoFile(data) {
