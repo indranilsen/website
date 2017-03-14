@@ -1,9 +1,29 @@
 angular.module('app')
-    .controller('videosController', function($scope, $http) {
+    .controller('videosController', function($scope, $http, $sce) {
         console.log("Hello from videosController");
         var videoEndpoint = 'http://localhost:3000/api/video';
 
         $scope.query = '';
+
+        $scope.trustSource = function(src) {
+            return $sce.trustAsResourceUrl(src);
+        };
+
+        $scope.loadVideo = function(index) {
+            var autoPlayParam = '&autoplay=1';
+            var source = $scope.videos[index].link.embed + autoPlayParam;
+            var player = document.createElement('iframe');
+
+            var parentId = 'video_' + String(index);
+            var parentElement = document.getElementById(parentId);
+
+            player.setAttribute('frameborder', '0');
+            player.setAttribute('allowfullscreen', 'true');
+            player.setAttribute('src', source);
+
+            parentElement.innerHTML = '';
+            parentElement.appendChild(player);
+        };
 
         $http.get(videoEndpoint)
             .then(function(res) {
