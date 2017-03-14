@@ -58,7 +58,7 @@ casper.then(function() {
                 var shareVid = 'https://youtu.be/' + vid;
 
                 var imgBase = 'http://img.youtube.com/vi/';
-                var imgMd = imgBase + vid + '/mqdefault.jpg';      // 320x120
+                var imgMd = imgBase + vid + '/mqdefault.jpg';      // 320x180
                 var imgHq = imgBase + vid + '/hqdefault.jpg';      // 480x360
                 var imgSd = imgBase + vid + '/sddefault.jpg';      // 640x480
                 var imgMax = imgBase + vid + '/maxresdefault.jpg'; // 1920x1080
