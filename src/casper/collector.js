@@ -57,11 +57,24 @@ casper.then(function() {
                 var embedVid = 'https://www.youtube.com/embed/' + vid + '?ecver=1';
                 var shareVid = 'https://youtu.be/' + vid;
 
+                var imgBase = 'http://img.youtube.com/vi/';
+                var imgMd = imgBase + vid + '/mqdefault.jpg';      // 320x120
+                var imgHq = imgBase + vid + '/hqdefault.jpg';      // 480x360
+                var imgSd = imgBase + vid + '/sddefault.jpg';      // 640x480
+                var imgMax = imgBase + vid + '/maxresdefault.jpg'; // 1920x1080
+
+                video.id = vid;
                 video.link = {
                     watch: watchVid,
                     embed: embedVid,
                     share: shareVid
-                }
+                };
+                video.image = {
+                    medium: imgMd,
+                    high: imgHq,
+                    standard: imgSd,
+                    maxres: imgMax
+                };
 
                 videoObj[count] = JSON.stringify(video);
 
