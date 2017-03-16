@@ -16,17 +16,24 @@
                 <li class="video-card-bottom">
                     <ul class="video-content" layout="column" layout-align="space-between">
                         <li>{{video.title}}</li>
-                        <li class="video-content-info" layout="row" layout-align="space-between">
+                        <li class="video-content-info">
                             <ul layout="row">
-                                <li><i class="fa fa-thumbs-up" aria-hidden="true"></i></li>
-                                <li>{{video.likes}}</li>
-                            </ul>
-                            <ul layout="row">
-                                <li><i class="fa fa-thumbs-down" aria-hidden="true"></i></li>
-                                <li>{{video.dislikes}}</li>
-                            </ul>
-                            <ul layout="row">
-                                <li>{{video.views}}</li>
+                                <li layout="row" layout-align="space-between" flex="70">
+                                    <ul layout="row">
+                                        <li><i class="fa fa-thumbs-up" aria-hidden="true"></i></li>
+                                        <li>{{video.likes}}</li>
+                                    </ul>
+                                    <ul layout="row">
+                                        <li><i class="fa fa-thumbs-down" aria-hidden="true"></i></li>
+                                        <li>{{video.dislikes}}</li>
+                                    </ul>
+                                    <ul layout="row">
+                                        <li>{{video.views}}</li>
+                                    </ul>
+                                </li>
+                                <li flex="30" layout="row" layout-align="end">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                </li>
                             </ul>
                         </li>
                     </ul>
