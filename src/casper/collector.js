@@ -64,6 +64,7 @@ casper.then(function() {
                 var imgMax = imgBase + vid + '/maxresdefault.jpg'; // 1920x1080
 
                 video.id = vid;
+                video.views = video.views.split(' ')[0];
                 video.link = {
                     watch: watchVid,
                     embed: embedVid,
