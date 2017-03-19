@@ -4,6 +4,8 @@ angular.module('app')
         var videoEndpoint = 'http://localhost:3000/api/video';
 
         $scope.query = '';
+        $scope.mainCard = true;
+        $scope.descriptionCard = false;
 
         $scope.trustSource = function(src) {
             return $sce.trustAsResourceUrl(src);
@@ -23,6 +25,16 @@ angular.module('app')
 
             parentElement.innerHTML = '';
             parentElement.appendChild(player);
+        };
+
+        $scope.showDescription = function(context) {
+            context.descriptionCard = true;
+            context.mainCard = false;
+        };
+
+        $scope.hideDescription = function(context) {
+            context.descriptionCard = false;
+            context.mainCard = true;
         };
 
         $http.get(videoEndpoint)
