@@ -46,7 +46,8 @@ casper.then(function() {
                     return document.querySelector('#watch-uploader-info > strong').innerHTML;
                 });
 
-                video.description = String(desc);
+                var re = /(<([^>]+)>)/ig;
+                video.description = String(desc).replace(re, '\n');
                 video.likes = String(vote).split(':')[0];
                 video.dislikes = String(vote).split(':')[1];
                 video.datePublished = String(datePublished).substr(('Published on ').length, String(datePublished).length);
