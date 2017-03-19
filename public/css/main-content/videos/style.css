@@ -19,7 +19,9 @@
 }
 
 .video-cont .video .video-card .video-card-top {
-    width: 100%;
+    width: 320px;
+    background: #000;
+    box-shadow: 0px 0px 20px 6px rgba(33,33,33,0.235);
 }
 
 .video-cont .video .video-card .video-card-top .button {
@@ -53,18 +55,18 @@
 }
 
 .video-cont .video .video-card .video-card-bottom {
-    border: 1px solid;
-    min-height: 150px;
+    min-height: 110px;
     width: 320px;
     background-color: #FFF;
     padding: 1em;
+    box-shadow: 0px 0px 20px 6px rgba(33,33,33,0.235);
 }
 
 .video-cont .video .video-card .video-card-bottom .video-content {
     list-style: none;
     margin: 0;
     padding: 0;
-    height: 110px;
+    height: 80px;
 }
 
 .video-cont .video .video-card .video-card-bottom .video-content .video-content-info ul {
@@ -75,6 +77,10 @@
 
 .video-cont .video .video-card .video-card-bottom .video-content .video-content-info .stats ul li:first-child {
     padding-right: 0.2em;
+}
+
+.video-cont .video .video-card .video-card-bottom .video-content .video-content-info .share i {
+    cursor: pointer;
 }
 
 .video-cont .video .video-card .video-card-bottom .video-content .video-content-info .share i:first-child {
