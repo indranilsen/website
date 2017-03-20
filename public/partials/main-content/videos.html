@@ -33,7 +33,15 @@
                                     </ul>
                                 </li>
                                 <li class="share" flex="30" layout="row" layout-align="end">
-                                    <i class="fa fa-share" aria-hidden="true" ng-click="shareVideo()"></i>
+                                    <md-menu md-position-mode="target-right target">
+                			            <i class="fa fa-share" aria-hidden="true" ng-click="$mdOpenMenu($event)"></i>
+                			          <md-menu-content width="4" class="share-link" style="padding: 0">
+                			            <md-menu-item>
+                                           <input type="text" value="{{video.link.share}}" onClick="this.select();"
+                                           style="margin: 0; font-family: inherit">
+                			            </md-menu-item>
+                			          </md-menu-content>
+                			        </md-menu>
                                     <i class="fa fa-info-circle" aria-hidden="true" ng-click="showDescription(this)"></i>
                                 </li>
                             </ul>
