@@ -16,7 +16,9 @@
   ],
   "author": "Indranil Sen",
   "license": "MIT",
-  "engines": {"node": ">=6.5.0"},
+  "engines": {
+    "node": ">=6.5.0"
+  },
   "devDependencies": {
     "add-stream": "^1.0.0",
     "del": "^2.2.2",
@@ -39,6 +41,7 @@
   "dependencies": {
     "compression": "^1.6.2",
     "express": "^4.14.0",
+    "request": "^2.81.0",
     "yargs": "^5.0.0"
   }
 }
