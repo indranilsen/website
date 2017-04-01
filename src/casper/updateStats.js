@@ -3,7 +3,7 @@ const path = require('path');
 const cheerio = require('cheerio');
 const request = require('request');
 const config = require('./casperConfig')();
-const videoFile = require('./videoFile0.json');
+const videoFile = require('./videoFile.json');
 
 let basePage = 'https://www.youtube.com/user/Sirius011196/videos?view=0&sort=dd&shelf_id=0';
 let videoFileLocation = path.resolve(__dirname, 'videoFile.json');
