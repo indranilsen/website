@@ -64,7 +64,7 @@
   border: 1px solid #00BAFF;
   border-radius: 0.3em;
   color: #00BAFF;
-  background-color: #FFF;
+  background-color: transparent;
 }
 
 .info-cont-form-button:not([disabled]):hover {

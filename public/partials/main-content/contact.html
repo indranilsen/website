@@ -19,7 +19,7 @@
 			        <md-input-container flex="50">
 			          <label>Email</label>
 				        <input required type="email" name="email" ng-model="user.email"
-				               minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+				               minlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
 				        <div ng-messages="user.email.$error" role="alert">
 				          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
 				            Your email must be a valid address between 10 and 100 characters long.
@@ -34,7 +34,7 @@
 			        </md-input-container>
 			      </md-input-container>
 			      <div>
-			        <md-button type="submit" class="info-cont-form-button">Submit</md-button>
+			        <md-button type="submit" class="info-cont-form-button" ng-click="send(contactForm.$valid)">Submit</md-button>
 			      </div>
 			    </form>
 			  </md-content>

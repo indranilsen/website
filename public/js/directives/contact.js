@@ -1,5 +1,5 @@
 angular.module('app')
-.directive('indranilSenMainContact', function() {
+.directive('indranilSenMainContact', function(messageHelper) {
 	return {
 		templateUrl: 'partials/main-content/contact.html',
 		controller: function($scope, $rootScope) {
@@ -7,6 +7,12 @@ angular.module('app')
 				name: '',
 				email: '',
 				message: '',
+			};
+
+			$scope.send = function(valid) {
+				if(valid) {
+					messageHelper.sendMessage($scope.user);
+				}
 			};
 		}
 	};
