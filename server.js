@@ -1,20 +1,24 @@
-var express = require('express');
-var compression = require('compression');
-var argv = require('yargs').argv;
+const express = require('express');
+const bodyParser = require('body-parser');
+const compression = require('compression');
+const argv = require('yargs').argv;
 
-var apiRouter = require('./src/routes/apiRoutes');
+const apiRouter = require('./src/routes/apiRoutes');
 
-var port = argv.port || 3000;
-var dist = argv.prod  ? '/dist' :'/public';
+let port = argv.port || 3000;
+let dist = argv.prod  ? '/dist' :'/public';
 
-var app = express();
+const app = express();
+const jsonParser = bodyParser.json();
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(compression());//GZIP
+app.use(jsonParser);//Use JSON Parser as top-level middleware
 
-var oneDay = 86400000;
-app.use('/js', express.static(__dirname + dist+'/js', { maxAge : oneDay*30 }));//30 days
-app.use('/css', express.static(__dirname + dist+'/css', { maxAge : oneDay*30 }));//30 days
-app.use('/img', express.static(__dirname + dist+'/img', { maxAge : oneDay*30 }));//30 days
+const ONE_DAY = 86400000;
+app.use('/js', express.static(__dirname + dist+'/js', { maxAge : ONE_DAY*30 }));//30 days
+app.use('/css', express.static(__dirname + dist+'/css', { maxAge : ONE_DAY*30 }));//30 days
+app.use('/img', express.static(__dirname + dist+'/img', { maxAge : ONE_DAY*30 }));//30 days
 app.use(express.static(__dirname+dist));
 
 app.use('/api', apiRouter);
