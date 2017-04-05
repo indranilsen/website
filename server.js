@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
+const dotenv = require('dotenv');
 const argv = require('yargs').argv;
 
 const apiRouter = require('./src/routes/apiRoutes');
@@ -8,7 +9,10 @@ const apiRouter = require('./src/routes/apiRoutes');
 let port = argv.port || 3000;
 let dist = argv.prod  ? '/dist' :'/public';
 
+dotenv.load();
+
 const app = express();
+
 const jsonParser = bodyParser.json();
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 

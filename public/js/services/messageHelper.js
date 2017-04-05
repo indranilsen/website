@@ -4,6 +4,7 @@ angular.module('app')
     var endPoint = 'api/message';
 
     this.sendMessage = function(data) {
+        console.log('SENDING');
         $http({
             method: 'POST',
             url: endPoint,
