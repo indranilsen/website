@@ -1,7 +1,7 @@
 angular.module('app')
     .controller('videosController', function($scope, $http, $sce) {
         console.log("Hello from videosController");
-        var videoEndpoint = 'http://localhost:3000/api/video';
+        var videoEndpoint = '/api/video';
 
         $scope.query = '';
         $scope.mainCard = true;
