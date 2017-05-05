@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 
-if (!process.env.USER_EMAIL || process.env.PASS || process.env.SERVICE) {
+if (!process.env.USER_EMAIL || !process.env.PASS || !process.env.SERVICE) {
     dotenv.load();
 }
 
@@ -17,22 +17,35 @@ var messageService = function() {
     let mailOptions = {
         from: process.env.USER_EMAIL,
         to: 'indranilsen010@gmail.com',
-        subject: 'Hello',
-        text: 'Hello world ',
-        html: '<b>Hello world </b><br> Sending this email from node!!'
+        subject: 'Hello from Visitor',
+        text: 'Hello',
+        html: '<b>Hello from Visitor</b><br>'
     };
 
     let transporter = nodemailer.createTransport(SMTPOptions);
 
-    var message = function(req) {
+    var createMessage = function(data, options) {
+        if(data.name !== null && data.name !== '') {
+            options.subject = `Hello from ${data.name}`;
+        }
+
+        if(data.email !== null && data.email !== ''
+            && data.message !== null && data.message !== '') {
+            options.html = `<b>${data.name} [${data.email}]:</b><br><br>${data.message}`;
+        }
+
+        return options;
+    };
+
+    var message = function(req, callback) {
+        mailOptions = createMessage(req.body, mailOptions);
         transporter.sendMail(mailOptions, function(err, info) {
             if(err){
-                console.log(err);
+                callback(err);
             }
 
-            console.log('Message sent: ' + info.response);
+            callback(null, `Message sent: ${info.response}`);
         });
-        return 'Message';
     };
 
     return {

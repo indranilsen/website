@@ -1,6 +1,12 @@
 var messageController = function(messageService) {
     var sendMessage = function(req, res) {
-        res.send(messageService.message(req));
+        messageService.message(req, function(err, info) {
+            if(err) {
+                res.sendStatus(500);
+            } else {
+                res.sendStatus(200);
+            }
+        });
     };
 
     return {
