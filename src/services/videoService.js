@@ -12,7 +12,6 @@ var videoService = function() {
         return new Promise(function(resolve, reject) {
             checkVideoFile().then(function(fileExists) {
                 if(!fileExists) {
-                    console.log('Does not exist');
                     casper()
                         .then(writeVideoFile)
                         .catch(function(err) {
@@ -22,7 +21,6 @@ var videoService = function() {
                             resolve(require(videoFile));
                         });
                 } else {
-                    console.log('Exists');
                     resolve(require(videoFile));
                 }
             });

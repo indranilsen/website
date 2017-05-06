@@ -39,7 +39,6 @@ angular.module('app')
 
         $http.get(videoEndpoint)
             .then(function(res) {
-                console.log(res.data);
                 $scope.videos = res.data;
             })
             .catch(function(err) {
