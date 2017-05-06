@@ -22,8 +22,8 @@ gulp.task('server', function() {
 	connect.server();
 });
 
-gulp.task('clean', function(cb) {
-	del([config.prod.main_folder],cb);
+gulp.task('clean', function() {
+	return del([config.prod.main_folder]);
 });
 
 gulp.task('img-copy', function(cb) {
