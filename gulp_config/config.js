@@ -12,7 +12,7 @@ var config = {
 	},
 	"inject": {
 		"injectOptionsCss": {
-			ignorePath: 'css',
+			ignorePath: 'public/css',
 			addRootSlash: false,
 			transform: function(elm){
 				var prepend = '/';
@@ -20,7 +20,7 @@ var config = {
 			}
 		},
 		"injectOptionsJs": {
-			ignorePath: 'js',
+			ignorePath: 'public/js',
 			addRootSlash: false,
 			transform: function(elm){
 				var prepend = '/';

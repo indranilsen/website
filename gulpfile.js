@@ -77,7 +77,7 @@ gulp.task('index',['styles','scripts'] ,function () {
 	var inject_prepend_css_url = 'css/';
 	var inject_prepend_js_url = 'js/';
 
-	var target = gulp.src(config.LANDING_PAGE);
+	var target = gulp.src('./public/' + config.LANDING_PAGE);
 
 	var css_sources = gulp.src(config.css.tasks.styles, {read: true})
 						.pipe(concat(inject_prepend_css_url+config.css.concat_file_name()));
