@@ -1,7 +1,8 @@
 var config = require('./gulp_config/config.js');
 var gulp = require('gulp');
+var exec = require('child_process').exec;
+var fs = require('fs');
 var autoprefixer = require('gulp-autoprefixer');
-var connect = require('gulp-connect');
 var ngAnnotate = require('gulp-ng-annotate');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -10,17 +11,11 @@ var stylish = require('jshint-stylish');
 var inject = require('gulp-inject');
 var argv = require('yargs').argv;
 var stream = require('merge-stream');
-var fs = require('fs');
 var stream = require('add-stream');
 var cleanCSS = require('gulp-clean-css');
 var nodemon = require('gulp-nodemon');
 var notify = require('gulp-notify');
 var del = require('del');
-var connect = require('gulp-connect');
-
-gulp.task('server', function() {
-	connect.server();
-});
 
 gulp.task('clean', function() {
 	return del([config.prod.main_folder]);
@@ -109,6 +104,32 @@ gulp.task('nodemon', ['index'], function (cb) {
 	}).on('restart', function(){
 		// when the app has restarted
 	});
+});
+
+gulp.task('start-prod', ['index'], function(cb) {
+	exec('pm2 start server.js -- --prod=true', function (err, stdout, stderr) {
+		if(err) {
+			console.log(err);
+		} else if (stderr) {
+			console.log(stderr);
+		} else {
+			console.log(stdout);
+		}
+	    cb();
+	  });
+});
+
+gulp.task('stop-prod', function(cb) {
+	exec('pm2 stop all; pm2 delete all', function (err, stdout, stderr) {
+		if(err) {
+			console.log(err);
+		} else if (stderr) {
+			console.log(stderr);
+		} else {
+			console.log(stdout);
+		}
+	    cb();
+	  });
 });
 
 gulp.task('default', ['nodemon']);
