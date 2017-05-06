@@ -6,8 +6,8 @@ const argv = require('yargs').argv;
 
 const apiRouter = require('./src/routes/apiRoutes');
 
-let port = argv.port || 3000;
 let dist = argv.prod  ? '/dist' :'/public';
+let port = argv.prod  ? 80 : (argv.port || 3000);
 
 dotenv.load();
 
