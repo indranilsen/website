@@ -1,5 +1,5 @@
 var config = {
-	"VERSION": 1.2,
+	"VERSION": 2.0,
 	"APP_NAME": "indranil-sen",
 	"LANDING_PAGE": "index.html",
 	"SERVER": "server.js",
