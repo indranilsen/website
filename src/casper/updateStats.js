@@ -13,6 +13,9 @@ let videos = videoFile.map(function(video, index) {
 });
 
 let convertToNumber = function(str) {
+    if (typeof str === 'number') {
+        return;
+    }
     return parseInt(str.replace(/[^\d\.\-]/g, ""));
 };
 
