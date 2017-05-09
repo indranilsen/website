@@ -9,11 +9,32 @@ angular.module('app')
         tags: "AngularJS, PHP, Laravel, MongoDB"
       },
       {
+        name: "Cartastic",
+        description: "As students, we are faced with the challenge of preparing meals and buying groceries, on a tight budget. We envisioned a tool that would provide a smoother grocery shopping experience. <br><br>Cart-astic gives you the ability to efficiently plan delicious meals by recognizing food items in images you take and helpfully suggests recipes based on your virtual cart. It keeps track of which ingredients you still need to grab, and which dishes you have enjoyed in the past to make your life even easier",
+        info: "An intelligent app that recognizes your groceries and plan delicious meals",
+        image: "cartastic.jpg",
+        tags: "Node.js, iOS"
+      },
+      {
         name: "Web-App Builder",
-        description: "This homebrew-deployed script eliminates about 8 hours of development time by completely automating all the start-up work necessary when building an AngularJS web application. By simply typing \'make-webapp -t -n [NAME_OF_PROJECT]\', the script generates a functioning boilerplate written using best practices and a modular architechture. The script also adds the Gulp Task Runner with several Gulp tasks to ease the workflow -- from creating a production-ready minified and vetted distribution folder to creating up a web development server with nodemon. The script also checks for missing dependencies, and automatically installs them.",
-        info: "A powerful script that saves hours by automating start-up work required when building an AngularJS web app",
+        description: "This homebrew-deployed script eliminates about 8 hours of development time by completely automating all the start-up work necessary when building an AngularJS web application. By simply typing \"make-webapp -t -n [NAME_OF_PROJECT]\", the script generates a functioning boilerplate written using best practices and a modular architechture. <br><br>The script also adds the Gulp Task Runner with several Gulp tasks to ease the workflow -- from creating a production-ready minified and vetted distribution folder to creating up a web development server with nodemon. The script also checks for missing dependencies, and automatically installs them.",
+        info: "A powerful script that saves hours by automating start-up work required when building a Node.js/AngularJS web app",
         image: "makeWebapp.jpg",
         tags: "Bash, Shell Scripting, Homebrew"
+      },
+      {
+        name: "YouTube Web Scraper",
+        description: "This dynamic web scraper collects video data about a user's video uploads. It also includes a script that updates the data periodically with the help of a cron job. The interface is provided as a CLI tool that works in the background. The scraping is done in a headless webkit-based browser that creates the DOM, and then allows to manipulate the nodes.<br><br>The need/idea for this project arrived when building this site. As I am constantly uploading videos to my channel, I wanted a way to automatically embed them to the site. Using some API would be too easy and I also wanted the challenge of creating a dynamic web scraper so I decided to pursue this project.",
+        info: "A scraper that collects and periodically updates a user's video uploads and associated data",
+        image: "scraper.jpg",
+        tags: "Node.js, PhantomJS, Casper, CLI"
+      },
+      {
+        name: "cdx",
+        description: "Short for Change-Directory eXpedited, this bash script is a light wrapper around the builtin \"cd\", giving it smarts. Cdx has logic that allows the user to quickly traverse deep directories. From the user's bash history, cdx can infer the exact child directory the user want to traverse to without having to write out the full, multi-levelled directory.",
+        info: "A script that adds smarts to the \"cd\" bash builtin",
+        image: "cdx.jpg",
+        tags: "Bash, Shell Scripting"
       },
       {
         name: "Student Finance Tracker",

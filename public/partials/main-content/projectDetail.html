@@ -9,7 +9,7 @@
       <li class="pane-centre-top">
         <ul>
           <li class="pane-centre-top-img"><img ng-src="/img/projects/{{project[index].image}}" alt="{{proj.info}}" /></li>
-          <li class="pane-centre-top-desc">{{project[index].description}}</li>
+          <li class="pane-centre-top-desc" ng-bind-html="trustSource(project[index].description)"></li>
         </ul>
       </li>
 

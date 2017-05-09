@@ -27,10 +27,6 @@ angular.module('app')
           "level": ""
         },
         {
-          "item": "R",
-          "level": ""
-        },
-        {
           "item": "MATLAB",
           "level": ""
         },
@@ -41,23 +37,15 @@ angular.module('app')
       ],
       "webDevelopment": [
         {
-          "item": "AngularJs",
-          "level": ""
-        },
-        {
           "item": "NodeJs",
           "level": ""
         },
         {
-          "item": "MongoDB",
+          "item": "AngularJs",
           "level": ""
         },
         {
           "item": "Express",
-          "level": ""
-        },
-        {
-          "item": "Django",
           "level": ""
         },
         {
@@ -69,6 +57,10 @@ angular.module('app')
           "level": ""
         },
         {
+          "item": "Redis",
+          "level": ""
+        },
+        {
           "item": "FlexBox",
           "level": ""
         },
@@ -77,33 +69,29 @@ angular.module('app')
           "level": ""
         },
         {
-          "item": "Redis",
+          "item": "MongoDB",
           "level": ""
         },
         {
-          "item": "Mongoose",
+          "item": "REST APIs",
           "level": ""
         },
         {
-          "item": "View Engines",
+          "item": "Mongoose ODM",
           "level": ""
         },
-        {
-          "item": "BootStrap",
-          "level": ""
-        }
       ],
       "hardware": [
         {
-          "item": "Atmel ATMega Microcontrollers",
+          "item": "Digital & Analog Circuits",
           "level": ""
         },
         {
-          "item": "Low-level Programming",
+          "item": "Assembly",
           "level": ""
         },
         {
-          "item": "Digital Circuits",
+          "item": "ARM RISC ISA",
           "level": ""
         },
         {
@@ -121,7 +109,11 @@ angular.module('app')
         {
           "item": "Arduino",
           "level": ""
-        }
+        },
+        {
+          "item": "Low-level (Emedded, Kernel, Systems-level) Programming",
+          "level": ""
+        },
       ],
       "concepts": [
         {
@@ -183,27 +175,19 @@ angular.module('app')
           "level": ""
         },
         {
-          "item": "NPM",
+          "item": "Altera Quartus Prime",
           "level": ""
         },
         {
-          "item": "Homebrew",
+          "item": "TI Code Composer Studio",
           "level": ""
         },
         {
-          "item": "CLI",
-          "level": ""
-        },
-        {
-          "item": "SVN",
+          "item": "Keil uVision",
           "level": ""
         },
         {
           "item": "AVR Studio",
-          "level": ""
-        },
-        {
-          "item": "BASCOM",
           "level": ""
         },
         {
@@ -221,14 +205,14 @@ angular.module('app')
       ],
       "relevantCourses": [
         {
-          "course": "Algorithms & Data Structures",
-          "year": "2A",
-          "code": "ECE 250"
-        },
-        {
           "course": "Digital Computers",
           "year": "2A",
           "code": "ECE 222"
+        },
+        {
+          "course": "Algorithms & Data Structures",
+          "year": "2A",
+          "code": "ECE 250"
         },
         {
           "course": "Linear Algebra for Engineering",
@@ -236,34 +220,34 @@ angular.module('app')
           "code": "ECE 215"
         },
         {
-          "course": "Electronic Circuits",
-          "year": "2A",
-          "code": "ECE 240"
-        },
-        {
-          "course": "Advanced Calculus",
-          "year": "2A",
-          "code": "ECE 205"
-        },
-        {
-          "course": "Fundamentals of Programming",
-          "year": "1A",
-          "code": "ECE 150"
-        },
-        {
-          "course": "Linear Circuits",
-          "year": "1A",
-          "code": "ECE 140"
-        },
-        {
-          "course": "Engineering Design with Embedded Systems",
-          "year": "1B",
-          "code": "ECE 155"
-        },
-        {
           "course": "Discrete Mathematics",
           "year": "1B",
           "code": "ECE 140"
+        },
+        {
+          "course": "Operating Systems & Systems Programming",
+          "year": "2B",
+          "code": "ECE 254"
+        },
+        {
+          "course": "Embedded Mircroprocessor Systems",
+          "year": "2B",
+          "code": "ECE 224"
+        },
+        {
+          "course": "Digital Circuits & Systems",
+          "year": "1B",
+          "code": "ECE 124"
+        },
+        {
+          "course": "Electronic Circuits II",
+          "year": "2B",
+          "code": "ECE 242"
+        },
+        {
+          "course": "Signals & Systems",
+          "year": "2B",
+          "code": "ECE 207"
         },
         {
           "course": "Algorithmic Toolbox",

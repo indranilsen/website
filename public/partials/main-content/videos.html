@@ -19,17 +19,17 @@
                         <li class="video-content-info">
                             <ul layout="row">
                                 <li class="stats" layout="row" layout-align="space-between" flex="70">
-                                    <ul ng-if="video.likes && video.dislikes" layout="row">
+                                    <ul ng-if="video.likes !== null && video.dislikes != null" layout="row">
                                         <li><i class="fa fa-thumbs-up" aria-hidden="true"></i></li>
-                                        <li>{{video.likes}}</li>
+                                        <li>{{video.likes | number}}</li>
                                     </ul>
-                                    <ul ng-if="video.likes && video.dislikes" layout="row">
+                                    <ul ng-if="video.likes !== null && video.dislikes != null" layout="row">
                                         <li><i class="fa fa-thumbs-down" aria-hidden="true"></i></li>
-                                        <li>{{video.dislikes}}</li>
+                                        <li>{{video.dislikes | number}}</li>
                                     </ul>
                                     <ul layout="row">
                                         <li><i class="fa fa-eye" aria-hidden="true"></i></li>
-                                        <li>{{video.views}}</li>
+                                        <li>{{video.views | number}}</li>
                                     </ul>
                                 </li>
                                 <li class="share" flex="30" layout="row" layout-align="end">
