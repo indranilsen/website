@@ -69,6 +69,14 @@ angular.module('app')
           "level": ""
         },
         {
+          "item": "Data Mining",
+          "level": ""
+        },
+        {
+          "item": "Web Scraping",
+          "level": ""
+        },
+        {
           "item": "MongoDB",
           "level": ""
         },
