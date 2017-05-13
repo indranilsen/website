@@ -52,7 +52,7 @@ angular.module('app')
       },
       {
         name: "My-Library",
-        description: "I simple project that I worked on when learning more about user validation and authentication. I used PassportJS as the middleware to secure routes, available only to authenticated users.",
+        description: "A simple project that I worked on when learning more about user validation and authentication. I used PassportJS as the middleware to secure routes, making them available only to authenticated users.",
         info: "A very simple library app that allows authenicated users access to my book collection",
         image: "myLibrary.jpg",
         tags: "NodeJS, Express, MongoDB, EJS"
