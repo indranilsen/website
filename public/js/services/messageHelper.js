@@ -3,7 +3,7 @@ angular.module('app')
 
     var endPoint = 'api/message';
 
-    this.sendMessage = function(data) {
+    this.sendMessage = function(data, callback) {
         console.log('SENDING');
         $http({
             method: 'POST',
@@ -11,9 +11,9 @@ angular.module('app')
             data: data,
             headers: {'Content-Type': 'application/json'}
         }).success(function(msg) {
-            console.log('SUCCESS', msg);
+            callback(true);
         }).error(function(err) {
-            console.log('ERROR', err);
+            callback(false);
         });
     };
 });
