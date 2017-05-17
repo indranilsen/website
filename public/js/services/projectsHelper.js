@@ -10,7 +10,7 @@ angular.module('app')
       },
       {
         name: "Cartastic",
-        description: "As students, we are faced with the challenge of preparing meals and buying groceries, on a tight budget. We envisioned a tool that would provide a smoother grocery shopping experience. <br><br>Cart-astic gives you the ability to efficiently plan delicious meals by recognizing food items in images you take and helpfully suggests recipes based on your virtual cart. It keeps track of which ingredients you still need to grab, and which dishes you have enjoyed in the past to make your life even easier",
+        description: "As students, we are faced with the challenge of preparing meals and buying groceries, on a tight budget. We envisioned a tool that would provide a smoother grocery shopping experience while increasing productivity and efficiency.<br><br>This project allows the user to efficiently plan delicious meals by recognizing food items in images of the user's shopping cart and suggests recipes based on the items and ingredients. It keeps track of which ingredients the user still needs to grab, and which dishes the user has enjoyed in the past. <br><br>Cartastic also includes a tool to give useful statistics on nutrition, including helpful insights such as cost per serving.",
         info: "An intelligent app that recognizes your groceries and plan delicious meals",
         image: "cartastic.jpg",
         tags: "Node.js, iOS"
