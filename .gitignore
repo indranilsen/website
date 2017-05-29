@@ -1,12 +1,20 @@
+#########################################################
+#  Custom Files & Directories
+#########################################################
+.env
 npm-debug.log
 dist
 node_modules
 public/node_modules
 public/bower_components
+public/assets
+public/img
+letter
+src/casper/*.json
 
-###################
+#########################################################
 #  MAC OS files
-###################
+#########################################################
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -33,9 +41,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-####################
-# windows OS files
-####################
+##########################################################
+# Windows OS files
+##########################################################
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
