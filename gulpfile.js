@@ -14,7 +14,6 @@ var stream = require('merge-stream');
 var stream = require('add-stream');
 var cleanCSS = require('gulp-clean-css');
 var nodemon = require('gulp-nodemon');
-var notify = require('gulp-notify');
 var del = require('del');
 
 gulp.task('clean', function() {
@@ -98,8 +97,7 @@ gulp.task('nodemon', ['index'], function (cb) {
 		if (!started) {
 			cb();
 			started = true;
-			gulp.src(config.SERVER)
-				.pipe(notify('App Started...'));
+			gulp.src(config.SERVER);
 		}
 	}).on('restart', function(){
 		// when the app has restarted
