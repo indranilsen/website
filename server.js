@@ -19,10 +19,11 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(compression());//GZIP
 app.use(jsonParser);//Use JSON Parser as top-level middleware
 
-const ONE_DAY = 86400000;
-app.use('/js', express.static(__dirname + dist+'/js', { maxAge : ONE_DAY*7 }));//7 days
-app.use('/css', express.static(__dirname + dist+'/css', { maxAge : ONE_DAY*7 }));//7 days
-app.use('/img', express.static(__dirname + dist+'/img', { maxAge : ONE_DAY*7 }));//7 days
+const ONE_DAY = argv.prod ? 86400000 : 0;
+
+app.use('/js', express.static(__dirname + dist+'/js', { maxAge : ONE_DAY*7 })); //7 days
+app.use('/css', express.static(__dirname + dist+'/css', { maxAge : ONE_DAY*7 }));
+app.use('/img', express.static(__dirname + dist+'/img', { maxAge : ONE_DAY*7 }));
 app.use(express.static(__dirname+dist));
 
 app.use('/api', apiRouter);
