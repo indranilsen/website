@@ -1,0 +1,73 @@
+<section ng-controller="loginController" class="login-cont">
+    <ul style="width: 100%" layout="row" layout-sm="column" layout-xs="column" layout-align="space-around space-around">
+      <li class="login" flex="50">
+          <div class="login-title">
+              <p>Login</p>
+          </div>
+
+          <form name="loginForm">
+          <md-content class="login-input" layout-padding>
+              <md-input-container class="md-block">
+                <!-- Use floating placeholder instead of label -->
+                <label>Email</label>
+                <md-icon id="email-icon" class="fa fa-envelope"></md-icon>
+                <input required type="email" name="email" ng-model="member.email"
+                       minlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+              </md-input-container>
+
+              <md-input-container class="md-icon-float md-block">
+                <!-- Use floating label instead of placeholder -->
+                <label>Password</label>
+                <md-icon id="pw-icon"><i class="fa fa-lock" aria-hidden="true"></i></md-icon>
+                <input required ng-model="member.password" type="password">
+              </md-input-container>
+            </md-content>
+        </form>
+
+        <div class="login-cont-form-button-cont">
+          <md-button type="submit" class="login-cont-form-button" ng-click="login(loginForm.$valid)">Login</md-button>
+        </div>
+
+        <div class="login-forgot">
+          <a href="#">Forgot password?</a>
+        </div>
+
+      </li>
+
+      <li class="register" flex="50">
+          <div class="login-title">
+              <p>Register</p>
+          </div>
+
+          <form name="registerForm">
+          <md-content class="login-input" layout-padding>
+              <md-input-container class="md-icon-float md-block">
+                <!-- Use floating label instead of placeholder -->
+                <label>Name</label>
+                <md-icon id="pw-icon"><i class="fa fa-lock" aria-hidden="true"></i></md-icon>
+                <input required ng-model="member.password" type="text">
+              </md-input-container>
+
+              <md-input-container class="md-block">
+                <!-- Use floating placeholder instead of label -->
+                <label>Email</label>
+                <md-icon id="email-icon" class="fa fa-envelope"></md-icon>
+                <input required type="email" name="email" ng-model="member.email"
+                       minlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+              </md-input-container>
+
+              <md-input-container class="md-icon-float md-block">
+                <!-- Use floating label instead of placeholder -->
+                <label>Password</label>
+                <md-icon id="pw-icon"><i class="fa fa-lock" aria-hidden="true"></i></md-icon>
+                <input required ng-model="member.password" type="password">
+              </md-input-container>
+            </md-content>
+        </form>
+
+        <div class="login-cont-form-button-cont">
+          <md-button type="submit" class="login-cont-form-button" ng-click="login(loginForm.$valid)">Register</md-button>
+        </div>
+      </li>
+  </ul>
+</section>

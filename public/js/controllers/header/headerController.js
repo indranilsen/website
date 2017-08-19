@@ -25,6 +25,10 @@ angular.module('app')
 		{
 			label: 'Videos',
 			link: 'videos'
+		},
+		{
+			label: 'Login',
+			link: 'login'
 		}
 	];
 

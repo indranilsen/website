@@ -1,0 +1,95 @@
+.login-cont {
+  min-height: 80vh;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #787878;
+}
+
+.login-cont ul {
+    list-style: none;
+    padding: 1.5em 0 0 0;
+    margin: 0;
+}
+.login-cont .login {
+    min-width: 400px;
+    max-width: 400px;
+}
+
+.login-cont .login-title {
+    padding: 0.5em;
+    background-color: #787878;
+}
+
+.login-cont .login-forgot {
+    padding: 1em 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.login-cont .login-forgot > a {
+    padding: 0;
+    margin: 0;
+    font-size: 0.8em;
+    color: #787878;
+    text-decoration: none;
+}
+
+.login-cont .login-forgot > a:hover {
+    text-decoration: underline;
+}
+
+.login-cont .login-title > p {
+    padding: 0.2em 0 0.2em 0.8em;
+    margin: 0;
+    font-size: 1.2em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.login-cont .login-input {
+    padding: 0 1em 0 1em;
+}
+
+.login-cont .register {
+    min-width: 400px;
+    max-width: 400px;
+}
+
+
+
+.login-cont .login-input md-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.login-cont #email-icon {
+    color: #787878;
+}
+
+.login-cont #pw-icon {
+    color: #787878;
+    font-size: 20px;
+}
+
+.login-cont-form-button-cont {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.login-cont-form-button {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 1px solid #787878;
+  color: #787878;
+  background-color: transparent;
+}
+
+.login-cont-form-button:not([disabled]):hover {
+  background-color: #787878;
+  color: #FFF;
+}
