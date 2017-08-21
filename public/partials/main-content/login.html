@@ -1,5 +1,5 @@
 <section ng-controller="loginController" class="login-cont">
-    <ul style="width: 100%" layout="row" layout-sm="column" layout-xs="column" layout-align="space-around space-around">
+    <ul style="width: 100%" layout="row" layout-sm="column" layout-xs="column" layout-align="space-around">
       <li class="login" flex="50">
           <div class="login-title">
               <p>Login</p>
@@ -8,7 +8,6 @@
           <form name="loginForm">
           <md-content class="login-input" layout-padding>
               <md-input-container class="md-block">
-                <!-- Use floating placeholder instead of label -->
                 <label>Email</label>
                 <md-icon id="email-icon" class="fa fa-envelope"></md-icon>
                 <input required type="email" name="email" ng-model="member.email"
@@ -16,7 +15,6 @@
               </md-input-container>
 
               <md-input-container class="md-icon-float md-block">
-                <!-- Use floating label instead of placeholder -->
                 <label>Password</label>
                 <md-icon id="pw-icon"><i class="fa fa-lock" aria-hidden="true"></i></md-icon>
                 <input required ng-model="member.password" type="password">
@@ -42,14 +40,12 @@
           <form name="registerForm">
           <md-content class="login-input" layout-padding>
               <md-input-container class="md-icon-float md-block">
-                <!-- Use floating label instead of placeholder -->
                 <label>Name</label>
                 <md-icon id="pw-icon"><i class="fa fa-user" aria-hidden="true"></i></md-icon>
                 <input required ng-model="registrant.name" type="text">
               </md-input-container>
 
               <md-input-container class="md-block">
-                <!-- Use floating placeholder instead of label -->
                 <label>Email</label>
                 <md-icon id="email-icon" class="fa fa-envelope"></md-icon>
                 <input required type="email" name="email" ng-model="registrant.email"
@@ -57,7 +53,6 @@
               </md-input-container>
 
               <md-input-container class="md-icon-float md-block">
-                <!-- Use floating label instead of placeholder -->
                 <label>Password</label>
                 <md-icon id="pw-icon"><i class="fa fa-lock" aria-hidden="true"></i></md-icon>
                 <input required ng-model="registrant.password" type="password">
