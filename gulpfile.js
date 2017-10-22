@@ -92,7 +92,7 @@ gulp.task('nodemon', ['index'], function (cb) {
 
 	return nodemon({
 		script: config.SERVER,
-		ext: 'public/js public/html public/css src/js',
+		ext: 'public/js public/html public/css src/*',
 		args: ["--port="+ port ,"--prod="+ prod],
 	}).on('start', function () {
 		if (!started) {

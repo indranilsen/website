@@ -29,7 +29,7 @@ var config = {
 		}
 	},
 	"prod": {
-		"main_folder": "dist"
+		"main_folder": "prod"
 	},
 	"css": {
 		"tasks": {

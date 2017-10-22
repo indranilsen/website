@@ -1,0 +1,9 @@
+{
+  "port": "9000",
+  "environment": "prod",
+  "clientDirectory": "prod",
+  "db": {
+    "host": "127.0.0.0:5639"
+  },
+  "clientSideCacheDuration": "604800000"
+}

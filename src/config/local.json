@@ -1,0 +1,5 @@
+{
+  "environment": "dev",
+  "clientDirectory": "public",
+  "clientSideCacheDuration": "0"
+}

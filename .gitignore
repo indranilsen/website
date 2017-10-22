@@ -3,7 +3,7 @@
 #########################################################
 .env
 npm-debug.log
-dist
+prod
 node_modules
 public/node_modules
 public/bower_components
@@ -11,6 +11,7 @@ public/assets
 public/img
 letter
 src/casper/*.json
+.idea/*
 
 #########################################################
 #  MAC OS files

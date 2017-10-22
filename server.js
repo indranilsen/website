@@ -1,31 +1,37 @@
+'use strict';
+
+require('dotenv').load();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
-const dotenv = require('dotenv');
-const argv = require('yargs').argv;
 
-const apiRouter = require('./src/routes/apiRoutes');
+const config = require('nconf')
+    .env({ lowerCase: true })
+    .argv()
+    .file('environment', { file: `./src/config/local.json` })
+    .file('defaults', { file: `./src/config/default.json` });
 
-let dist = argv.prod  ? '/dist' :'/public';
-let port = argv.prod  ? 80 : (argv.port || 3000);
-
-dotenv.load();
+const port = config.get('port');
+const clientDirectory = config.get('clientDirectory');
+const clientSideCacheDuration = config.get('clientSideCacheDuration');
 
 const app = express();
 
 const jsonParser = bodyParser.json();
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-app.use(compression());//GZIP
-app.use(jsonParser);//Use JSON Parser as top-level middleware
+app.use(compression()); //GZIP
+app.use(jsonParser);    //Use JSON Parser as top-level middleware
+app.use(urlencodedParser);
 
-const ONE_DAY = 86400000;
-app.use('/js', express.static(__dirname + dist+'/js', { maxAge : ONE_DAY*7 }));//7 days
-app.use('/css', express.static(__dirname + dist+'/css', { maxAge : ONE_DAY*7 }));//7 days
-app.use('/img', express.static(__dirname + dist+'/img', { maxAge : ONE_DAY*7 }));//7 days
-app.use(express.static(__dirname+dist));
+app.use('/js', express.static(`${__dirname}/${clientDirectory}/js`, { maxAge : clientSideCacheDuration }));   //7 days
+app.use('/css', express.static(`${__dirname}/${clientDirectory}/css`, { maxAge : clientSideCacheDuration })); //7 days
+app.use('/img', express.static(`${__dirname}/${clientDirectory}/img`, { maxAge : clientSideCacheDuration })); //7 days
+app.use(express.static(`${__dirname}/${clientDirectory}`));
 
-app.use('/api', apiRouter);
+app.use('/', require('./src/routes/routes.js'));
 
-app.listen(port);
-console.log("Server listening on port " + port + " with mode: "+ (argv.prod ? 'PROD': 'DEV'));
+app.listen(port, () => {
+    console.log(`Listening on port ${port} with mode: ${config.get('environment')}`);
+});
