@@ -32,6 +32,11 @@ app.use(express.static(`${__dirname}/${clientDirectory}`));
 
 app.use('/', require('./src/routes/routes.js'));
 
+// Status probe
+app.get('/health', (req, res) => {
+    res.sendStatus(200);
+});
+
 app.listen(port, () => {
     console.log(`Listening on port ${port} with mode: ${config.get('environment')}`);
 });
